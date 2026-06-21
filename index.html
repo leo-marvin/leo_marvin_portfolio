@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leo Marvin — Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --bg3: #1a1a24;
+      --accent: #f5a623;
+      --accent2: #ff7b39;
+      --text: #e8e8f0;
+      --text2: #9898b0;
+      --border: rgba(255,255,255,0.07);
+      --card: rgba(255,255,255,0.03);
+      --glow: rgba(245,166,35,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw;
+      height: 64px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text2); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      padding: 0.5rem 1.2rem;
+      background: var(--accent);
+      color: #0a0a0f;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 100px 5vw 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 70% 40%, rgba(245,166,35,0.08) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 40% at 30% 70%, rgba(255,123,57,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      position: relative;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid rgba(245,166,35,0.3);
+      border-radius: 100px;
+      font-size: 0.8rem; color: var(--accent);
+      font-weight: 500; margin-bottom: 1.5rem;
+    }
+    .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+    h1 .accent { color: var(--accent); }
+    .hero-desc {
+      font-size: 1.05rem; color: var(--text2);
+      line-height: 1.7; margin-bottom: 2rem;
+      max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 0.75rem 1.8rem;
+      background: var(--accent); color: #0a0a0f;
+      border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,0.3); }
+    .btn-secondary {
+      padding: 0.75rem 1.8rem;
+      border: 1px solid var(--border); color: var(--text);
+      border-radius: 8px; font-weight: 500; font-size: 0.95rem;
+      text-decoration: none; transition: border-color 0.2s, background 0.2s;
+      background: var(--card);
+    }
+    .btn-secondary:hover { border-color: var(--accent); background: var(--glow); }
+
+    .hero-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .hero-photo-wrap {
+      position: relative;
+      width: 280px; height: 280px;
+      margin: 0 auto;
+    }
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute; inset: -8px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      background: linear-gradient(135deg, var(--accent), var(--accent2)) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+    }
+    .hero-photo {
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-photo-placeholder {
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: var(--bg3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; color: var(--text2);
+    }
+    .contact-pills { display: flex; flex-direction: column; gap: 0.7rem; }
+    .pill {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.7rem 1rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; font-size: 0.875rem;
+      text-decoration: none; color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .pill:hover { border-color: var(--accent); background: var(--glow); }
+    .pill-icon { font-size: 1rem; width: 20px; text-align: center; }
+    .pill-label { color: var(--text2); font-size: 0.78rem; }
+    .pill-value { font-weight: 500; }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 5vw; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .section-label::before { content:''; flex-shrink:0; width:24px; height:2px; background:var(--accent); }
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700; letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .section-sub { color: var(--text2); font-size: 1.05rem; margin-bottom: 3rem; max-width: 560px; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg2); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { color: var(--text2); line-height: 1.8; margin-bottom: 1rem; }
+    .about-text p strong { color: var(--text); }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .stat-card {
+      padding: 1.2rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; text-align: center;
+    }
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem; font-weight: 700; color: var(--accent);
+    }
+    .stat-label { font-size: 0.8rem; color: var(--text2); margin-top: 0.2rem; }
+    .traits { display: flex; flex-direction: column; gap: 1rem; }
+    .trait {
+      padding: 1.2rem 1.4rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+    }
+    .trait-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .trait-desc { font-size: 0.875rem; color: var(--text2); }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--bg); }
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: grid; grid-template-columns: 180px 1fr;
+      gap: 2rem; padding-bottom: 3rem; position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: 188px; top: 8px; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, var(--border), transparent);
+    }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-period {
+      text-align: right; padding-top: 0.2rem;
+    }
+    .timeline-period-label { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+    .timeline-period-date { font-size: 0.78rem; color: var(--text2); margin-top: 0.2rem; }
+    .timeline-dot {
+      position: absolute; left: 181px; top: 5px;
+      width: 15px; height: 15px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: var(--bg);
+      box-shadow: 0 0 10px var(--glow);
+    }
+    .timeline-content {
+      padding-left: 1.5rem;
+    }
+    .timeline-school {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem;
+    }
+    .timeline-location { font-size: 0.85rem; color: var(--text2); margin-bottom: 1rem; }
+    .timeline-body { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .timeline-col-title { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+    .timeline-list { list-style: none; }
+    .timeline-list li {
+      font-size: 0.875rem; color: var(--text2);
+      padding: 0.25rem 0;
+      display: flex; align-items: baseline; gap: 0.5rem;
+    }
+    .timeline-list li::before { content: '—'; color: var(--accent); font-size: 0.7rem; flex-shrink: 0; }
+    .project-tag-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8rem; color: var(--accent);
+      background: var(--glow); border: 1px solid rgba(245,166,35,0.2);
+      border-radius: 6px; padding: 0.2rem 0.6rem;
+      text-decoration: none; transition: background 0.2s;
+      cursor: pointer;
+    }
+    .project-tag-link:hover { background: rgba(245,166,35,0.25); }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg2); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .project-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+    .project-card:hover { transform: translateY(-4px); border-color: rgba(245,166,35,0.3); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .project-card-header {
+      padding: 1.5rem 1.5rem 1rem;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    }
+    .project-domain {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+    }
+    .domain-Development { background: rgba(107,69,200,0.2); color: #a78bfa; border: 1px solid rgba(107,69,200,0.3); }
+    .domain-Manufacturing { background: rgba(245,166,35,0.15); color: var(--accent); border: 1px solid rgba(245,166,35,0.3); }
+    .domain-Research { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+    .domain-Charity { background: rgba(251,113,133,0.15); color: #fb7185; border: 1px solid rgba(251,113,133,0.3); }
+    .project-card-icon { font-size: 2rem; }
+    .project-card-body { padding: 0 1.5rem 1.5rem; }
+    .project-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem; font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+    .project-card-desc { font-size: 0.875rem; color: var(--text2); line-height: 1.6; margin-bottom: 1.2rem; }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .project-meta-item {
+      font-size: 0.75rem; color: var(--text2);
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+    .project-meta-item strong { color: var(--text); }
+    .project-card-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .skill-chip {
+      font-size: 0.72rem; padding: 0.25rem 0.6rem;
+      background: rgba(255,255,255,0.06); border-radius: 4px;
+      color: var(--text2); border: 1px solid var(--border);
+    }
+
+    /* ── PROJECT MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 20px; max-width: 700px; width: 100%;
+      max-height: 85vh; overflow-y: auto;
+      transform: translateY(20px);
+      transition: transform 0.25s;
+      padding: 2.5rem;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal-close {
+      float: right; background: none; border: none; color: var(--text2);
+      font-size: 1.5rem; cursor: pointer; padding: 0;
+      transition: color 0.2s;
+    }
+    .modal-close:hover { color: var(--text); }
+    .modal-domain { margin-bottom: 1rem; }
+    .modal-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem; font-weight: 700;
+      letter-spacing: -0.02em; margin-bottom: 1.5rem;
+    }
+    .modal-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+    .modal-table td { padding: 0.6rem 0.8rem; font-size: 0.875rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .modal-table td:first-child { color: var(--text2); font-weight: 500; width: 35%; }
+    .modal-table td:last-child { color: var(--text); }
+    .modal-section-title {
+      font-weight: 600; font-size: 0.9rem; color: var(--accent);
+      margin: 1.5rem 0 0.75rem; letter-spacing: 0.05em;
+    }
+    .modal-body-text { font-size: 0.875rem; color: var(--text2); line-height: 1.7; }
+    .modal-body-text ul { margin-left: 1.2rem; margin-top: 0.5rem; }
+    .modal-body-text li { margin-bottom: 0.3rem; }
+    .modal-featured-img {
+      width: 100%; max-height: 280px; object-fit: cover;
+      border-radius: 12px; margin-bottom: 1.5rem; display: block;
+    }
+    .modal-gallery {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .modal-gallery img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: 8px; cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .modal-gallery img:hover { transform: scale(1.02); opacity: 0.9; }
+    /* Engagement section */
+    #engagement { background: var(--bg); }
+    .engagement-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .activity-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      cursor: pointer; display: flex; flex-direction: column;
+    }
+    .activity-card:hover { transform: translateY(-4px); border-color: rgba(245,166,35,0.3); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .activity-card-banner {
+      height: 130px; background: var(--bg3);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .activity-card-banner img { max-height: 80px; max-width: 70%; object-fit: contain; filter: brightness(0.95); }
+    .activity-card-banner-emoji { font-size: 3.5rem; }
+    .activity-card-banner::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(10,10,15,0.6));
+      pointer-events: none;
+    }
+    .activity-card-tag {
+      position: absolute; top: 0.75rem; right: 0.75rem; z-index: 1;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 100px;
+    }
+    .tag-charity { background: rgba(251,113,133,0.2); color: #fb7185; border: 1px solid rgba(251,113,133,0.3); }
+    .tag-design  { background: rgba(96,165,250,0.2);  color: #60a5fa; border: 1px solid rgba(96,165,250,0.3);  }
+    .activity-card-body { padding: 1.2rem 1.4rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .activity-card-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .activity-card-desc { font-size: 0.855rem; color: var(--text2); line-height: 1.6; flex: 1; }
+    .activity-card-meta { display: flex; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .activity-meta-item { font-size: 0.75rem; color: var(--text2); display: flex; align-items: center; gap: 0.3rem; }
+    .activity-meta-item strong { color: var(--text); }
+    /* Modal logo */
+    .modal-logo-wrap { display: flex; justify-content: center; padding: 1.5rem 0 1rem; }
+    .modal-logo-wrap img { max-height: 80px; max-width: 200px; object-fit: contain; }
+    /* CV section */
+    #cv { background: var(--bg2); }
+    .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .cv-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+    .cv-card:hover { transform: translateY(-4px); border-color: rgba(245,166,35,0.3); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .cv-card-header {
+      padding: 1.5rem 1.5rem 1rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .cv-card-flag { font-size: 2.5rem; }
+    .cv-card-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; font-weight: 700; }
+    .cv-card-sub { font-size: 0.82rem; color: var(--text2); margin-top: 0.2rem; }
+    .cv-card-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cv-card-hint { font-size: 0.78rem; color: var(--text2); }
+    .cv-card-btn {
+      padding: 0.45rem 1.1rem; background: var(--accent); color: #0a0a0f;
+      border-radius: 6px; font-weight: 600; font-size: 0.82rem;
+      text-decoration: none; transition: opacity 0.2s; pointer-events: none;
+    }
+    .report-block { margin-top: 1.5rem; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .report-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.2rem;
+      background: rgba(245,166,35,0.06); border-bottom: 1px solid var(--border);
+    }
+    .report-header-left { display: flex; align-items: center; gap: 0.6rem; }
+    .report-header-icon { font-size: 1.1rem; }
+    .report-header-title { font-size: 0.9rem; font-weight: 600; }
+    .report-header-sub { font-size: 0.75rem; color: var(--text2); margin-top: 0.1rem; }
+    .report-dl-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.45rem 1rem; background: var(--accent); color: #0a0a0f;
+      border-radius: 6px; font-weight: 600; font-size: 0.8rem;
+      text-decoration: none; transition: opacity 0.2s; flex-shrink: 0;
+    }
+    .report-dl-btn:hover { opacity: 0.85; }
+    .report-preview {
+      width: 100%; height: 420px; border: none; display: block;
+      background: #fff;
+    }
+    .report-no-preview {
+      padding: 1.2rem; font-size: 0.82rem; color: var(--text2); text-align: center;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .skill-category {
+      padding: 1.5rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .skill-cat-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 600; margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .skill-cat-icon { font-size: 1.2rem; }
+    .skill-items { display: flex; flex-direction: column; gap: 0.75rem; }
+    .skill-item {}
+    .skill-name { font-size: 0.875rem; color: var(--text); margin-bottom: 0.35rem; display: flex; justify-content: space-between; }
+    .skill-level { font-size: 0.72rem; color: var(--text2); }
+    .skill-bar { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .skill-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; transition: width 1s ease; }
+
+    /* ── SAMPLE WORK ── */
+    #work { background: var(--bg2); }
+    .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .work-item {
+      padding: 1.4rem 1.6rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; display: flex; align-items: center; gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none; color: var(--text);
+    }
+    .work-item:hover { border-color: rgba(245,166,35,0.3); transform: translateY(-2px); }
+    .work-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .work-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .work-desc { font-size: 0.82rem; color: var(--text2); }
+    .work-download {
+      margin-left: auto; flex-shrink: 0;
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--accent); padding: 0.35rem 0.75rem;
+      border: 1px solid rgba(245,166,35,0.3);
+      border-radius: 6px; background: var(--glow);
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); text-align: center; }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
+    .contact-card {
+      padding: 1.5rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; text-align: left;
+      text-decoration: none; color: var(--text);
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .contact-card-icon { font-size: 1.5rem; }
+    .contact-card-label { font-size: 0.78rem; color: var(--text2); margin-bottom: 0.2rem; }
+    .contact-card-value { font-weight: 500; font-size: 0.9rem; word-break: break-all; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 5vw;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      color: var(--text2); font-size: 0.82rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── FADE-IN ── */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 4vw; }
+      .nav-links { display: none; }
+      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-info { order: -1; align-items: center; }
+      .hero-photo-wrap { width: 200px; height: 200px; }
+      .hero-photo, .hero-photo-placeholder { width: 200px; height: 200px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .timeline-item::before, .timeline-dot { display: none; }
+      .timeline-period { text-align: left; }
+      .timeline-content { padding-left: 0; }
+      .timeline-body { grid-template-columns: 1fr; gap: 1rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .work-grid { grid-template-columns: 1fr; }
+      .engagement-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 70px 5vw; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Leo <span>Marvin</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#engagement">Engagement</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:leo.marvin@ensam.eu" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid">
+    <div class="hero-text">
+      <div class="hero-tag">Open to opportunities</div>
+      <h1>Hi, I'm<br><span class="accent">Leo Marvin</span></h1>
+      <p class="hero-desc">
+        Franco-British Mechanical Engineering student at <strong>ENSAM Châlons-en-Champagne</strong>, bridging
+        hands-on manufacturing, AI development, and applied research.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View my projects →</a>
+        <a href="#contact" class="btn-secondary">Contact me</a>
+      </div>
+    </div>
+    <div class="hero-info">
+      <div class="hero-photo-wrap">
+        <img src="Photo_id_LM.jpg" class="hero-photo" alt="Leo Marvin" />
+      </div>
+      <div class="contact-pills">
+        <div class="pill">
+          <span class="pill-icon">📍</span>
+          <div>
+            <div class="pill-label">Location</div>
+            <div class="pill-value">Versailles, France</div>
+          </div>
+        </div>
+        <a href="mailto:leo.marvin@ensam.eu" class="pill">
+          <span class="pill-icon">✉️</span>
+          <div>
+            <div class="pill-label">Email</div>
+            <div class="pill-value">leo.marvin@ensam.eu</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/leo-marvin-423124279" target="_blank" class="pill">
+          <span class="pill-icon">💼</span>
+          <div>
+            <div class="pill-label">LinkedIn</div>
+            <div class="pill-value">leo-marvin-423124279</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About me</p>
+    <h2>Engineering with intention</h2>
+    <p class="section-sub">Driven by curiosity, built on rigour.</p>
+    <div class="about-grid fade-up">
+      <div class="about-text">
+        <p>
+          I'm a <strong>Franco-British Mechanical Engineering student</strong> shaped by an international upbringing,
+          with hands-on experience in industrial design, product development, and a growing focus on
+          technical consulting.
+        </p>
+        <p>
+          Known for bringing structure and relentlessness to every team — the person who keeps
+          projects on track and pushes through complexity until it's solved.
+        </p>
+        <p>
+          Skilled in <strong>3D modelling</strong> (3DExperience & SolidWorks), <strong>project management</strong>, and
+          <strong>Python</strong> for data analysis and process automation — with the technical breadth to bridge
+          engineering and business needs.
+        </p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Engineering projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Languages spoken</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">ENSAM</div>
+            <div class="stat-label">Grande École</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">2028</div>
+            <div class="stat-label">Graduating</div>
+          </div>
+        </div>
+      </div>
+      <div class="traits">
+        <div class="trait">
+          <div class="trait-title">🎯 Detail-oriented</div>
+          <div class="trait-desc">Proactive learner comfortable adapting quickly to new tools and technologies across engineering and business domains.</div>
+        </div>
+        <div class="trait">
+          <div class="trait-title">🤝 Team driver</div>
+          <div class="trait-desc">Led a 12-person multidisciplinary team at the Dassault UAV Challenge, coordinating AI, mechanics, and software subgroups.</div>
+        </div>
+        <div class="trait">
+          <div class="trait-title">🔬 Research-minded</div>
+          <div class="trait-desc">Designed and built an original electromagnetic braking system from scratch, applying scientific methodology end-to-end.</div>
+        </div>
+        <div class="trait">
+          <div class="trait-title">🌍 International</div>
+          <div class="trait-desc">Fluent in French and English; educated in an international bilingual school with exposure to multiple academic systems.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <p class="section-label">Education</p>
+    <h2>Academic background</h2>
+    <p class="section-sub">A rigorous path through France's top engineering pipeline.</p>
+    <div class="timeline fade-up">
+
+      <div class="timeline-item">
+        <div class="timeline-period">
+          <div class="timeline-period-label">Current</div>
+          <div class="timeline-period-date">2025 – 2028</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-school">Ecole Nationale Supérieure des Arts et Métiers</div>
+          <div class="timeline-location">📍 Châlons-en-Champagne, France</div>
+          <div class="timeline-body">
+            <div>
+              <div class="timeline-col-title">Subjects</div>
+              <ul class="timeline-list">
+                <li>Continuum Mechanics</li>
+                <li>Materials Science</li>
+                <li>Thermodynamics</li>
+                <li>Machining & Manufacturing</li>
+              </ul>
+            </div>
+            <div>
+              <div class="timeline-col-title">Projects</div>
+              <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <span class="project-tag-link" onclick="openModal('uav')">🚁 Dassault UAV Challenge</span>
+                <span class="project-tag-link" onclick="openModal('manufacturing')">⚙️ Industrial Manufacturing</span>
+                <span class="project-tag-link" onclick="openModal('cordes')">🤝 Cordées de la Réussite</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-period">
+          <div class="timeline-period-label">Prépa</div>
+          <div class="timeline-period-date">2023 – 2025</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-school">Classe Préparatoire PTSI / PT★</div>
+          <div class="timeline-location">📍 Lycée Raspail, Paris</div>
+          <div class="timeline-body">
+            <div>
+              <div class="timeline-col-title">Subjects</div>
+              <ul class="timeline-list">
+                <li>Advanced Mathematics</li>
+                <li>Advanced Physics</li>
+                <li>Engineering Sciences</li>
+                <li>Technical Drawing</li>
+              </ul>
+            </div>
+            <div>
+              <div class="timeline-col-title">Projects</div>
+              <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                <span class="project-tag-link" onclick="openModal('eddy')">⚡ Eddy Current Research</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-period">
+          <div class="timeline-period-label">Bac</div>
+          <div class="timeline-period-date">2020 – 2023</div>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-school">Baccalauréat Option Internationale</div>
+          <div class="timeline-location">📍 Lycée Franco-Allemand, Buc</div>
+          <div class="timeline-body">
+            <div>
+              <div class="timeline-col-title">Subjects</div>
+              <ul class="timeline-list">
+                <li>Mathematics (+ extra maths)</li>
+                <li>Physics & Biology</li>
+                <li>English Literature (A-Level)</li>
+                <li>History & Geography (A-Level)</li>
+              </ul>
+            </div>
+            <div>
+              <div class="timeline-col-title">Activities</div>
+              <ul class="timeline-list">
+                <li>Model United Nations — weekly debate club</li>
+                <li>GrandMUN international conference</li>
+                <li>Half of classes taught in English</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-label">Projects</p>
+    <h2>Featured work</h2>
+    <p class="section-sub">From AI-powered drones to electromagnetic braking systems.</p>
+    <div class="projects-grid fade-up">
+
+      <div class="project-card" onclick="openModal('uav')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Development">Development</span>
+          <span class="project-card-icon">🚁</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Dassault UAV Challenge</div>
+          <p class="project-card-desc">
+            Led the AI module for ENSAM's entry in Dassault's 12th edition UAV competition.
+            Built real-time obstacle detection & autonomous flight using YOLOv8 and ArduPilot.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">🏢 <strong>Dassault Aviation</strong></span>
+            <span class="project-meta-item">👥 Team of <strong>12</strong></span>
+            <span class="project-meta-item">📅 <strong>2025 – 2026</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">YOLOv8</span>
+          <span class="skill-chip">OpenCV</span>
+          <span class="skill-chip">ArduPilot</span>
+          <span class="skill-chip">3D Printing</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openModal('eddy')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Research">Research</span>
+          <span class="project-card-icon">⚡</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Eddy Current Braking Research</div>
+          <p class="project-card-desc">
+            Designed and built a contactless electromagnetic braking system for road freight trucks.
+            Quantified disc geometry and magnetic field parameters affecting braking performance.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">🔬 <strong>Research project</strong></span>
+            <span class="project-meta-item">📅 <strong>Dec 2024 – Jul 2025</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Electromagnetism</span>
+          <span class="skill-chip">Experimental Design</span>
+          <span class="skill-chip">Physics</span>
+          <span class="skill-chip">Data Analysis</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openModal('manufacturing')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Manufacturing">Manufacturing</span>
+          <span class="project-card-icon">⚙️</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Industrial Manufacturing Project</div>
+          <p class="project-card-desc">
+            Full production cycle of an industrial mechanical part — from raw casting to finished,
+            inspected component. Covered foundry, CNC machining, and CMM metrology.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">👥 Team of <strong>3</strong></span>
+            <span class="project-meta-item">📅 <strong>Nov 2025 – Jan 2026</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Foundry</span>
+          <span class="skill-chip">CNC Machining</span>
+          <span class="skill-chip">GD&T</span>
+          <span class="skill-chip">Metrology</span>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label">Skills & tools</p>
+    <h2>Technical expertise</h2>
+    <p class="section-sub">Engineering know-how across design, software, and production.</p>
+    <div class="skills-grid fade-up">
+
+      <div class="skill-category">
+        <div class="skill-cat-title"><span class="skill-cat-icon">🖥️</span> Software & Programming</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-name">Python <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Computer Vision <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Data Analysis <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title"><span class="skill-cat-icon">📐</span> CAD & Design</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-name">3DExperience (Catia) <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">SolidWorks <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Technical Drawing <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title"><span class="skill-cat-icon">🏭</span> Manufacturing</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-name">CNC Machining <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Foundry & Casting <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">GD&T / Metrology <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title"><span class="skill-cat-icon">🧠</span> Engineering Sciences</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-name">Continuum Mechanics <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Thermodynamics <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Electromagnetism <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title"><span class="skill-cat-icon">📋</span> Project Management</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-name">Team Leadership <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Product Development <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Task Planning & Coordination <span class="skill-level">Advanced</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title"><span class="skill-cat-icon">🌐</span> Languages</div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-name">French <span class="skill-level">Native</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">English <span class="skill-level">Native / C2</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">German <span class="skill-level">Certified B1</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="section-inner">
+    <p class="section-label">Curriculum Vitae</p>
+    <h2>My CV</h2>
+    <p class="section-sub">Available in French and English — click to preview or download.</p>
+    <div class="cv-grid fade-up">
+      <div class="cv-card" onclick="openCV('en')">
+        <div class="cv-card-header">
+          <span class="cv-card-flag">🇬🇧</span>
+          <div>
+            <div class="cv-card-title">English CV</div>
+            <div class="cv-card-sub">Up-to-date résumé in English</div>
+          </div>
+        </div>
+        <div class="cv-card-footer">
+          <span class="cv-card-hint">Click to preview & download</span>
+          <span class="cv-card-btn">View →</span>
+        </div>
+      </div>
+      <div class="cv-card" onclick="openCV('fr')">
+        <div class="cv-card-header">
+          <span class="cv-card-flag">🇫🇷</span>
+          <div>
+            <div class="cv-card-title">CV Français</div>
+            <div class="cv-card-sub">CV à jour en français</div>
+          </div>
+        </div>
+        <div class="cv-card-footer">
+          <span class="cv-card-hint">Cliquer pour prévisualiser & télécharger</span>
+          <span class="cv-card-btn">Voir →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE WORK -->
+<section id="work">
+  <div class="section-inner">
+    <p class="section-label">Sample work</p>
+    <h2>Documents & reports</h2>
+    <p class="section-sub">Academic deliverables produced during my studies.</p>
+    <div class="work-grid fade-up">
+      <a class="work-item" href="eddy_current_report.pdf" target="_blank" download>
+        <span class="work-icon">⚡</span>
+        <div>
+          <div class="work-title">Eddy Current Research Report</div>
+          <div class="work-desc">Full research report on electromagnetic braking — experimental setup, methodology, and results. (65 pages)</div>
+        </div>
+        <span class="work-download">↓ PDF</span>
+      </a>
+      <a class="work-item" href="gearbox_report.pdf" target="_blank" download>
+        <span class="work-icon">⚙️</span>
+        <div>
+          <div class="work-title">Industrial Gearbox Design Report</div>
+          <div class="work-desc">Manufacturing documentation and critical analysis for the industrial mechanical part project. (47 pages)</div>
+        </div>
+        <span class="work-download">↓ PDF</span>
+      </a>
+      <a class="work-item" href="industrial_project_report.docx" target="_blank" download>
+        <span class="work-icon">🏭</span>
+        <div>
+          <div class="work-title">Industrial Project Report</div>
+          <div class="work-desc">Full report covering foundry, CNC machining, and CMM metrology for the ENSAM manufacturing project.</div>
+        </div>
+        <span class="work-download">↓ DOCX</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT -->
+<section id="engagement">
+  <div class="section-inner">
+    <p class="section-label">Beyond Engineering</p>
+    <h2>Personal engagement</h2>
+    <p class="section-sub">Charity work, community initiatives, and projects I care about outside the classroom.</p>
+    <div class="engagement-grid fade-up">
+
+      <div class="activity-card" onclick="openModal('restos')">
+        <div class="activity-card-banner">
+          <span class="activity-card-tag tag-charity">Charity</span>
+          <span class="activity-card-banner-emoji">🍽️</span>
+        </div>
+        <div class="activity-card-body">
+          <div class="activity-card-title">Les Restos du Cœur</div>
+          <p class="activity-card-desc">Weekly food distribution and national campaigns for one of France's largest charities — serving up to 200 families per week.</p>
+          <div class="activity-card-meta">
+            <span class="activity-meta-item">📅 <strong>Since July 2023</strong></span>
+            <span class="activity-meta-item">🍽️ <strong>Food Bank</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card" onclick="openModal('gazole')">
+        <div class="activity-card-banner">
+          <span class="activity-card-tag tag-charity">Charity</span>
+          <img src="Gazole_logo.webp" alt="Gazole" />
+        </div>
+        <div class="activity-card-body">
+          <div class="activity-card-title">Gazole — Gadz'Arts Solidaire</div>
+          <p class="activity-card-desc">Secretary of the ENSAM solidarity association — organising blood donation drives, food collections, and the Grand Bastringue music festival.</p>
+          <div class="activity-card-meta">
+            <span class="activity-meta-item">📅 <strong>Since Nov 2025</strong></span>
+            <span class="activity-meta-item">✍️ <strong>Secretary</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card" onclick="openModal('regattarts')">
+        <div class="activity-card-banner">
+          <span class="activity-card-tag tag-design">Competition</span>
+          <img src="regattarts_logo.webp" alt="Regatt'Arts" />
+        </div>
+        <div class="activity-card-body">
+          <div class="activity-card-title">Regatt'Arts — Monaco Energy Boat Challenge</div>
+          <p class="activity-card-desc">Head of Sponsoring for ENSAM's entry in the international clean-energy boat racing competition held in Monaco. Secured €30,000 in funding.</p>
+          <div class="activity-card-meta">
+            <span class="activity-meta-item">📅 <strong>Since Feb 2026</strong></span>
+            <span class="activity-meta-item">💶 <strong>€30K raised</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card" onclick="openModal('cordes')">
+        <div class="activity-card-banner">
+          <span class="activity-card-tag tag-charity">Mentoring</span>
+          <span class="activity-card-banner-emoji">🎓</span>
+        </div>
+        <div class="activity-card-body">
+          <div class="activity-card-title">Cordées de la Réussite</div>
+          <p class="activity-card-desc">National mentoring programme connecting ENSAM students with high schoolers from priority education zones — organising campus visits and demos.</p>
+          <div class="activity-card-meta">
+            <span class="activity-meta-item">📅 <strong>Since Sept 2025</strong></span>
+            <span class="activity-meta-item">👥 <strong>Team of 20</strong></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner contact-inner">
+    <p class="section-label" style="justify-content:center;">Contact</p>
+    <h2>Let's connect</h2>
+    <p class="section-sub" style="margin:0 auto 0;">
+      I'm open to internship opportunities, research collaborations, and interesting projects.
+      Don't hesitate to reach out!
+    </p>
+    <div class="contact-grid fade-up">
+      <a href="mailto:leo.marvin@ensam.eu" class="contact-card">
+        <span class="contact-card-icon">✉️</span>
+        <div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">leo.marvin@ensam.eu</div>
+        </div>
+      </a>
+      <a href="tel:+33788350683" class="contact-card">
+        <span class="contact-card-icon">📞</span>
+        <div>
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-value">+33 (0)7 88 35 06 83</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/leo-marvin-423124279" target="_blank" class="contact-card">
+        <span class="contact-card-icon">💼</span>
+        <div>
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-value">leo-marvin-423124279</div>
+        </div>
+      </a>
+      <div class="contact-card">
+        <span class="contact-card-icon">📍</span>
+        <div>
+          <div class="contact-card-label">Based in</div>
+          <div class="contact-card-value">Versailles, France</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Leo Marvin. All rights reserved.</span>
+  <span>Built with care · <a href="mailto:leo.marvin@ensam.eu">leo.marvin@ensam.eu</a></span>
+</footer>
+
+<!-- PROJECT MODALS -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-content">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+  const projects = {
+    uav: {
+      domain: 'Development',
+      icon: '🚁',
+      title: 'Dassault UAV Challenge',
+      report: { file: "Rapport - Projet Gadz'air - ENSAM.pdf", label: 'Mid-Project Report', sub: 'PDF · French version', type: 'pdf' },
+      meta: [
+        ['Client', 'Dassault Aviation'],
+        ['Period', 'September 2025 – January 2026'],
+        ['Domain', 'Aeronautics'],
+        ['Team size', '12 people'],
+        ['Position', 'Co-Head of the project and Head of Artificial Intelligence'],
+        ['Methodology', 'Product Development'],
+      ],
+      description: `
+        <p>To represent ENSAM at Dassault's 12th UAV Challenge, two student teams were formed with a clear brief: build a competition-ready flying drone from scratch. As co-head of the first team and head of AI, I led both the overall project coordination and the development of an onboard computer vision system capable of real-time obstacle detection and avoidance.</p>
+        <p style="margin-top:0.75rem">The drone had to satisfy four hard requirements: <strong>fully autonomous GPS waypoint navigation</strong>, <strong>real-time AI-powered obstacle avoidance</strong>, <strong>DGAC-compliant safety features</strong> (manual kill switch, Return-To-Launch failsafe), and a <strong>live video downlink</strong> to a ground station.</p>
+      `,
+      sections: [
+        {
+          title: '🤖 AI System — What I Built',
+          body: `<p style="margin-bottom:0.75rem">The AI layer consists of two independent Python modules that work in sequence during flight:</p>
+            <p><strong>Module 1 — Object Detection & Classification</strong></p>
+            <ul style="margin:0.4rem 0 0.9rem">
+              <li>Built on <strong>YOLOv8n</strong> (Ultralytics) and <strong>OpenCV</strong>, running inference on the live camera feed</li>
+              <li>Returns bounding boxes, class labels, and confidence scores for each detected object in real time</li>
+              <li>Model validated on actual drone footage to handle lower resolution and motion blur</li>
+            </ul>
+            <p><strong>Module 2 — Danger Assessment & Avoidance</strong></p>
+            <ul style="margin:0.4rem 0 0.9rem">
+              <li>Compares successive frames using <strong>Farneback optical flow</strong> to compute a dense motion field across the image</li>
+              <li>Zones with high motion magnitude are flagged as high-risk — meaning an obstacle is approaching fast</li>
+              <li>When danger is detected, the module issues a <strong>PID-based avoidance command</strong> (yaw correction + forward thrust adjustment) to steer around the obstacle</li>
+              <li>Validated on a live phone video stream; full drone integration pending at report date</li>
+            </ul>
+            <p><strong>Decision pipeline:</strong> <code style="background:rgba(255,255,255,0.07);padding:0.15rem 0.4rem;border-radius:4px;font-size:0.82rem">Acquire frame → Detect objects → Compute optical flow → Assess danger → Avoidance manoeuvre → Resume mission</code></p>`
+        },
+        {
+          title: '🏗️ Mechanical Design',
+          body: `<ul>
+            <li>Designed and 3D-printed a first quadcopter prototype in PLA with isolated, adapted components</li>
+            <li><strong>Materials study (beam theory):</strong> arms modelled as hollow cylinders (L = 35 cm, ø = 20 mm) under 20 N motor load with a maximum allowable deflection of 5 mm</li>
+            <li>Required Young's modulus: ≥ 12 GPa — standard PLA (E &lt; 10 GPa) is insufficient</li>
+            <li>Solution: <strong>carbon-reinforced PLA</strong> selected for all structural arms</li>
+          </ul>`
+        },
+        {
+          title: '✈️ Autonomous Flight Stack',
+          body: `<ul>
+            <li><strong>ArduPilot</strong> selected after a structured comparison of Betaflight, INAV, ArduPilot, and PX4 across 6 criteria: autonomy level, documentation quality, real-time video support, complex flight plan capability, safety features, and community size</li>
+            <li>Flight logic developed and tested using <strong>SITL simulation</strong> (Software-In-The-Loop) in Mission Planner before any real hardware flight</li>
+            <li>GPS waypoint flight plans designed to match competition conditions</li>
+            <li>PID controllers tuned for roll/pitch, yaw, altitude hold, and navigation using <strong>AutoTune + manual log-based refinement</strong></li>
+          </ul>`
+        }
+      ],
+      images: ['Dassault_software1.png', 'Dassault_software2.png'],
+      video: 'Dassault_software3.mov',
+      chips: ['Python', 'YOLOv8n', 'OpenCV', 'Optical Flow', 'ArduPilot', 'SITL', 'PID Control', '3D Printing', 'Carbon PLA']
+    },
+    eddy: {
+      domain: 'Research',
+      icon: '⚡',
+      title: 'Eddy Current Braking Research',
+      report: { file: 'eddy_current_report.pdf', label: 'Research Report', sub: 'PDF · 65 pages', type: 'pdf' },
+      image: 'eddy_braking.jpg',
+      gallery: ['eddy_braking1.jpg', 'eddy_braking2.jpg', 'eddy_braking3.jpg'],
+      meta: [
+        ['Period', 'December 2024 – July 2025'],
+        ['Domain', 'Electronics / Electromagnetism'],
+        ['Methodology', 'Research Project'],
+      ],
+      description: `<p>This research project aimed to identify and quantify the physical parameters — disc geometry, magnetic field intensity — that influence the braking performance of an electromagnetic eddy current retarder for road freight transport.</p>`,
+      sections: [
+        {
+          title: '🔬 Methodology',
+          body: `<ul>
+            <li>Designed and implemented the full experimental methodology</li>
+            <li>Built a physical model to carry out systematic experiments</li>
+            <li>Implemented strategies to criticise the model and suggest improvements</li>
+          </ul>`
+        },
+        {
+          title: '🏆 Achievement',
+          body: `<p>Successfully designed and built a braking system relying solely on Eddy Currents, applicable to lorries. Produced a full research report documenting experimental setup, results, and conclusions.</p>`
+        }
+      ],
+      chips: ['Electromagnetism', 'Experimental Design', 'Physics', 'Data Analysis', 'Scientific Writing']
+    },
+    manufacturing: {
+      domain: 'Manufacturing',
+      icon: '⚙️',
+      title: 'Industrial Manufacturing Project',
+      report: { file: 'gearbox_report.pdf', label: 'Gearbox Design Report', sub: 'PDF · 47 pages', type: 'pdf' },
+      image: 'reducteur-3d.png',
+      meta: [
+        ['Period', 'November 2025 – January 2026'],
+        ['Domain', 'Manufacturing'],
+        ['Team size', '3 people'],
+        ['Methodology', 'Product Development'],
+      ],
+      description: `<p>A hands-on ENSAM project covering the full production cycle of an industrial mechanical part — from raw casting to finished, inspected component.</p>`,
+      sections: [
+        {
+          title: '🏭 How we divided the work',
+          body: `<ul>
+            <li><strong>Foundry:</strong> Designed and produced the part using casting techniques; applied knowledge of mould design and metal flow behaviour</li>
+            <li><strong>Machining:</strong> Prepared full manufacturing documentation (phase contracts, process plans) and carried out machining operations</li>
+            <li><strong>Metrology:</strong> Inspected the finished part using a CMM, analysed GD&T tolerances, and interpreted dimensional results against specifications</li>
+          </ul>`
+        }
+      ],
+      chips: ['Foundry & Casting', 'CNC Machining', 'GD&T', 'CMM Metrology', 'Process Planning', 'Technical Drawing']
+    },
+    restos: {
+      domain: 'Charity Work',
+      icon: '🍽️',
+      title: "Les Restos du Cœur",
+      report: null,
+      meta: [
+        ['Period', 'From July 2023 (ongoing)'],
+        ['Domain', 'Food Bank & Social Support'],
+        ['Team size', '~10 volunteers per week'],
+        ['Position', 'Organiser & Participant'],
+      ],
+      description: `<p>The Restaurants du Cœur are one of France's largest charities. Beyond food aid, their mission covers housing, employment, healthcare access, and cultural activities. Each year they distribute hundreds of millions of meals, making them a cornerstone of the French social safety net.</p>`,
+      sections: [
+        {
+          title: '🤝 Responsibilities',
+          body: `<ul>
+            <li>Organising and running weekly food distribution sessions</li>
+            <li>Taking part in national food-collecting campaigns</li>
+          </ul>`
+        },
+        {
+          title: '🏆 Achievements',
+          body: `<ul>
+            <li>Served up to <strong>200 families per week</strong></li>
+            <li>Collected <strong>1.3 tonnes of food</strong> in a town of 50,000 during the 2023 national campaign</li>
+          </ul>`
+        }
+      ],
+      chips: ['Food Aid', 'Community Outreach', 'Event Coordination', 'Social Engagement']
+    },
+    gazole: {
+      domain: 'Charity Work',
+      icon: '🤲',
+      title: "Gazole — Gadz'Arts Solidaire",
+      report: null,
+      logo: 'Gazole_logo.webp',
+      meta: [
+        ['Period', 'From November 2025 (ongoing)'],
+        ['Domain', 'Charity & Community'],
+        ['Team size', '5 (Châlons-en-Champagne)'],
+        ['Position', 'Secretary'],
+      ],
+      description: `<p>Gadz'Arts Solidaire — known as Gazole — is the charity association of the Arts et Métiers network. Its mission is to support larger charities from within the ENSAM community and alumni network, and to organise solidarity initiatives throughout the year.</p>`,
+      sections: [
+        {
+          title: '📋 Responsibilities',
+          body: `<ul>
+            <li>Organising blood donation events on campus</li>
+            <li>Organising solidarity events with local authorities</li>
+            <li>Collecting food for local food banks</li>
+          </ul>`
+        },
+        {
+          title: '🎵 Key Events',
+          body: `<ul>
+            <li><strong>Le Grand Bastringue</strong> — annual music festival organised in Cluny</li>
+            <li>Annual international solidarity projects</li>
+          </ul>`
+        }
+      ],
+      chips: ['Charity', 'Event Organisation', 'Community', 'Blood Donation', 'Food Collection']
+    },
+    regattarts: {
+      domain: 'Design',
+      icon: '⛵',
+      title: "Regatt'Arts — Monaco Energy Boat Challenge",
+      report: null,
+      logo: 'regattarts_logo.webp',
+      meta: [
+        ['Period', 'Since February 2026 (ongoing)'],
+        ['Domain', 'Clean Maritime Engineering'],
+        ['Team size', '20 people'],
+        ['Position', 'Head of Sponsoring'],
+      ],
+      description: `<p>The Monaco Energy Boat Challenge is an international competition that brings together students, engineers, and innovators to design and race energy-efficient boats powered by clean technologies. Held in Monaco, the event highlights sustainability, engineering performance, and forward-thinking marine innovation.</p>`,
+      sections: [
+        {
+          title: '📋 Responsibilities',
+          body: `<ul>
+            <li>Identifying and approaching potential sponsors</li>
+            <li>Managing the team's social media presence and public communications</li>
+            <li>Building the sponsorship dossier and partnership strategy</li>
+          </ul>`
+        },
+        {
+          title: '🏆 Achievement',
+          body: `<p>Secured <strong>€30,000 in sponsorship</strong> to finance the development and production of the competition boat.</p>`
+        }
+      ],
+      chips: ['Sponsoring', 'Clean Energy', 'Marine Engineering', 'Social Media', 'Communication']
+    },
+    cordes: {
+      domain: 'Charity Work',
+      icon: '🤝',
+      title: 'Cordées de la Réussite',
+      report: null,
+      gallery: ['cordee1.jpg', 'cordee2.jpg', 'cordee3.jpg', 'cordee4.jpg'],
+      meta: [
+        ['Period', 'From September 2025 (ongoing)'],
+        ['Domain', 'Education & Mentoring'],
+        ['Team size', '20 people'],
+        ['Position', 'Organiser & Participant'],
+      ],
+      description: `<p>A French national mentoring programme creating partnerships between grandes écoles and secondary schools in priority education zones, aiming to broaden the ambitions of motivated students from underprivileged backgrounds.</p>`,
+      sections: [
+        {
+          title: '📋 Responsibilities',
+          body: `<ul>
+            <li>Organising visits from high schools at ENSAM Châlons-en-Champagne</li>
+            <li>Creating interactive engineering demos for groups of ~30 pupils</li>
+            <li>Designing and coordinating activities to showcase the engineering profession</li>
+            <li>Acting as a role model and mentor for younger students considering scientific careers</li>
+          </ul>`
+        }
+      ],
+      chips: ['Mentoring', 'Event Organisation', 'Communication', 'Community Engagement']
+    }
+  };
+
+  function renderReport(r) {
+    const preview = r.type === 'pdf'
+      ? `<iframe class="report-preview" src="${r.file}" title="${r.label}"></iframe>`
+      : `<div class="report-no-preview">Aperçu non disponible pour les fichiers DOCX.</div>`;
+    return `
+      <div class="report-block" style="margin-top:1.5rem">
+        <div class="report-header">
+          <div class="report-header-left">
+            <span class="report-header-icon">📄</span>
+            <div>
+              <div class="report-header-title">${r.label}</div>
+              <div class="report-header-sub">${r.sub}</div>
+            </div>
+          </div>
+          <a class="report-dl-btn" href="${r.file}" download>↓ Télécharger</a>
+        </div>
+        ${preview}
+      </div>`;
+  }
+
+  function openModal(id) {
+    const p = projects[id];
+    if (!p) return;
+    const domainClass = `domain-${p.domain.replace(' ', '')}`;
+    const featuredImg = p.image
+      ? `<img src="${p.image}" class="modal-featured-img" alt="${p.title}" />`
+      : p.logo
+        ? `<div class="modal-logo-wrap"><img src="${p.logo}" alt="${p.title}" /></div>`
+        : '';
+    const galleryHtml = p.gallery
+      ? `<div class="modal-section-title">📸 Photos</div>
+         <div class="modal-gallery">${p.gallery.map(g => `<img src="${g}" alt="photo" loading="lazy" />`).join('')}</div>`
+      : '';
+    const softwareMediaHtml = (p.images || p.video)
+      ? `<div class="modal-section-title">🎥 Software in action</div>
+         ${p.images ? `<div class="modal-gallery" style="margin-bottom:1rem">${p.images.map(img => `<img src="${img}" alt="software screenshot" loading="lazy" />`).join('')}</div>` : ''}
+         ${p.video ? `<video controls style="width:100%;border-radius:10px;margin-top:0.5rem;background:#000" preload="metadata"><source src="${p.video}"><p style="font-size:0.82rem;color:var(--text2);padding:1rem">Votre navigateur ne supporte pas la lecture vidéo.</p></video>` : ''}`
+      : '';
+    let sectionsHtml = p.sections.map(s => `
+      <div class="modal-section-title">${s.title}</div>
+      <div class="modal-body-text">${s.body}</div>
+    `).join('');
+    document.getElementById('modal-body').innerHTML = `
+      ${featuredImg}
+      <div class="modal-domain"><span class="project-domain ${domainClass}">${p.domain}</span></div>
+      <div class="modal-title">${p.icon} ${p.title}</div>
+      <table class="modal-table">
+        ${p.meta.map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}
+      </table>
+      <div class="modal-body-text">${p.description}</div>
+      ${sectionsHtml}
+      ${softwareMediaHtml}
+      ${galleryHtml}
+      <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem">
+        ${p.chips.map(c => `<span class="skill-chip">${c}</span>`).join('')}
+      </div>
+      ${p.report ? renderReport(p.report) : ''}
+    `;
+    document.getElementById('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  const cvs = {
+    en: { flag: '🇬🇧', title: 'English CV', sub: 'Up-to-date résumé in English', file: 'cv_english.pdf' },
+    fr: { flag: '🇫🇷', title: 'CV Français', sub: 'CV à jour en français', file: 'cv_francais.pdf' },
+  };
+
+  function openCV(id) {
+    const c = cvs[id];
+    if (!c) return;
+    document.getElementById('modal-body').innerHTML = `
+      <div class="modal-title">${c.flag} ${c.title}</div>
+      <p style="font-size:0.875rem;color:var(--text2);margin-bottom:1.5rem">${c.sub}</p>
+      <div class="report-block">
+        <div class="report-header">
+          <div class="report-header-left">
+            <span class="report-header-icon">📄</span>
+            <div>
+              <div class="report-header-title">${c.title}</div>
+              <div class="report-header-sub">PDF</div>
+            </div>
+          </div>
+          <a class="report-dl-btn" href="${c.file}" download>↓ Télécharger</a>
+        </div>
+        <iframe class="report-preview" src="${c.file}" style="height:600px" title="${c.title}"></iframe>
+      </div>
+    `;
+    document.getElementById('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(e) {
+    if (e.target === document.getElementById('modal-overlay')) closeModalBtn();
+  }
+  function closeModalBtn() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+
+  // Intersection Observer for fade-up
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
