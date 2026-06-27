@@ -596,7 +596,7 @@
       <div class="hero-tag">Open to opportunities</div>
       <h1>Hi, I'm<br><span class="accent">Leo Marvin</span></h1>
       <p class="hero-desc">
-        Franco-British Mechanical Engineering student at <strong>Arts et Métiers (ENSAM)</strong>, bridging
+        Franco-British Mechanical Engineering student at <strong>ENSAM Châlons-en-Champagne</strong>, bridging
         hands-on manufacturing, AI development, and applied research.
       </p>
       <div class="hero-actions">
@@ -730,6 +730,7 @@
               <div style="display:flex;flex-direction:column;gap:0.5rem;">
                 <span class="project-tag-link" onclick="openModal('uav')">🚁 Dassault UAV Challenge</span>
                 <span class="project-tag-link" onclick="openModal('manufacturing')">⚙️ Industrial Manufacturing</span>
+                <span class="project-tag-link" onclick="openModal('gearbox')">🔩 Industrial Gearbox Design</span>
                 <span class="project-tag-link" onclick="openModal('cordes')">🤝 Cordées de la Réussite</span>
               </div>
             </div>
@@ -760,6 +761,7 @@
               <div class="timeline-col-title">Projects</div>
               <div style="display:flex;flex-direction:column;gap:0.5rem;">
                 <span class="project-tag-link" onclick="openModal('eddy')">⚡ Eddy Current Research</span>
+                <span class="project-tag-link" onclick="openInfo('prepa')" style="border-color:rgba(96,165,250,0.3);color:#60a5fa;background:rgba(96,165,250,0.08)">ℹ️ What is a Classe Préparatoire?</span>
               </div>
             </div>
           </div>
@@ -862,7 +864,7 @@
       <div class="project-card" onclick="openModal('manufacturing')">
         <div class="project-card-header">
           <span class="project-domain domain-Manufacturing">Manufacturing</span>
-          <span class="project-card-icon">⚙️</span>
+          <span class="project-card-icon">🏭</span>
         </div>
         <div class="project-card-body">
           <div class="project-card-title">Industrial Manufacturing Project</div>
@@ -880,6 +882,29 @@
           <span class="skill-chip">CNC Machining</span>
           <span class="skill-chip">GD&T</span>
           <span class="skill-chip">Metrology</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openModal('gearbox')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Development">Development</span>
+          <span class="project-card-icon">🔩</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Industrial Gearbox Design</div>
+          <p class="project-card-desc">
+            Preliminary design of a 10.5 kW gearbox (4:1 ratio) for conveyor belt systems — covering gear sizing, shaft dimensioning, bearing selection, and lubrication.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">👥 Team of <strong>5</strong></span>
+            <span class="project-meta-item">📅 <strong>Sept 2025 – Jan 2026</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Gear Train Sizing</span>
+          <span class="skill-chip">Tresca Criterion</span>
+          <span class="skill-chip">ISO 281 Bearings</span>
+          <span class="skill-chip">Technical Drawing</span>
         </div>
       </div>
 
@@ -1300,28 +1325,64 @@
     },
     manufacturing: {
       domain: 'Manufacturing',
-      icon: '⚙️',
+      icon: '🏭',
       title: 'Industrial Manufacturing Project',
-      report: { file: 'gearbox_report.pdf', label: 'Gearbox Design Report', sub: 'PDF · 47 pages', type: 'pdf' },
-      image: 'reducteur-3d.png',
+      report: { file: 'industrial_project_report.pdf', label: 'Industrial Project Report', sub: 'PDF', type: 'pdf' },
       meta: [
         ['Period', 'November 2025 – January 2026'],
         ['Domain', 'Manufacturing'],
         ['Team size', '3 people'],
         ['Methodology', 'Product Development'],
       ],
-      description: `<p>A hands-on ENSAM project covering the full production cycle of an industrial mechanical part — from raw casting to finished, inspected component.</p>`,
+      description: `<p>A hands-on ENSAM project covering the full production cycle of an industrial mechanical part — from raw casting to finished, inspected component. The project spanned three distinct manufacturing phases, each handled by the team in rotation.</p>`,
       sections: [
         {
-          title: '🏭 How we divided the work',
+          title: '🏭 Production cycle',
           body: `<ul>
-            <li><strong>Foundry:</strong> Designed and produced the part using casting techniques; applied knowledge of mould design and metal flow behaviour</li>
-            <li><strong>Machining:</strong> Prepared full manufacturing documentation (phase contracts, process plans) and carried out machining operations</li>
+            <li><strong>Foundry & Casting:</strong> Designed and produced the part using casting techniques; applied knowledge of mould design and metal flow behaviour</li>
+            <li><strong>CNC Machining:</strong> Prepared full manufacturing documentation (phase contracts, process plans) and carried out machining operations to bring the cast part to its final geometry and tolerances</li>
             <li><strong>Metrology:</strong> Inspected the finished part using a CMM, analysed GD&T tolerances, and interpreted dimensional results against specifications</li>
           </ul>`
         }
       ],
       chips: ['Foundry & Casting', 'CNC Machining', 'GD&T', 'CMM Metrology', 'Process Planning', 'Technical Drawing']
+    },
+    gearbox: {
+      domain: 'Development',
+      icon: '🔩',
+      title: 'Industrial Gearbox Design',
+      report: { file: 'gearbox_report.pdf', label: 'Gearbox Design Report', sub: 'PDF · 47 pages · French', type: 'pdf' },
+      image: 'reducteur-3d.png',
+      meta: [
+        ['Period', 'September 2025 – January 2026'],
+        ['Client', 'ENSAM Châlons-en-Champagne'],
+        ['Domain', 'Mechanical Engineering'],
+        ['Team size', '5 people'],
+        ['Methodology', 'Structured preliminary design (avant-projet)'],
+      ],
+      description: `<p>Preliminary design of a <strong>10.5 kW industrial gearbox</strong> with a <strong>4:1 reduction ratio</strong>, intended for integration into food-industry conveyor belt systems. The project covered the full pre-design cycle: functional requirements analysis, gear train sizing, shaft and housing dimensions, lubrication system selection, and standardised component specification.</p>`,
+      sections: [
+        {
+          title: '🔧 Methodology & tools used',
+          body: `<ul>
+            <li>Functional requirements breakdown and technical specifications via <strong>FAST diagrams</strong></li>
+            <li>Gear train pre-sizing using both <strong>Hertz surface pressure</strong> and <strong>tooth bending failure</strong> methods</li>
+            <li>Shaft dimensioning under combined bending and torsion loading (<strong>Tresca criterion</strong>)</li>
+            <li>Bearing selection using <strong>ISO 281 bearing life</strong> calculations (SKF bearings)</li>
+            <li>Material selection using <strong>Ashby charts</strong>; lubrication system validated (oil bath / splash)</li>
+            <li>Component specification: Paulstra shaft seals, standardised keyways</li>
+          </ul>`
+        },
+        {
+          title: '📐 Deliverables',
+          body: `<ul>
+            <li>Complete preliminary design report meeting all client specifications, delivered on time</li>
+            <li>Technical drawings, kinematic diagrams, and assembly sketches</li>
+            <li>Two viable assembly architectures proposed (shoulder-only vs. spacer-assisted), each supported by detailed technological diagrams</li>
+          </ul>`
+        }
+      ],
+      chips: ['Gear Train Sizing', 'Hertz Contact Theory', 'Tresca Criterion', 'ISO 281 Bearings', 'Ashby Charts', 'FAST Diagrams', 'Technical Drawing', 'CAD']
     },
     restos: {
       domain: 'Charity Work',
@@ -1536,6 +1597,61 @@
   function closeModal(e) {
     if (e.target === document.getElementById('modal-overlay')) closeModalBtn();
   }
+  const infoPages = {
+    prepa: {
+      title: 'What is a Classe Préparatoire?',
+      icon: '🎓',
+      body: `
+        <p style="margin-bottom:1rem">If you're not familiar with the French education system, the <strong>Classe Préparatoire aux Grandes Écoles (CPGE)</strong> likely has no direct equivalent in the US — but the closest analogy would be a <strong>hyper-intensive two-year honours program</strong> sitting between high school and an elite engineering school, with the rigor of a top graduate curriculum compressed into undergraduate years.</p>
+
+        <div class="modal-section-title">🏫 How the French system works</div>
+        <div class="modal-body-text">
+          <p>In France, the most prestigious engineering schools — called <em>Grandes Écoles</em> — do not admit students directly from high school. Instead, the standard pathway is:</p>
+          <ol style="margin:0.75rem 0 0.75rem 1.2rem;line-height:2">
+            <li><strong>Baccalauréat</strong> (equivalent to high school diploma + A-Levels)</li>
+            <li><strong>Classe Préparatoire</strong> — 2 years of intensive preparation</li>
+            <li><strong>Competitive national entrance exam</strong> (<em>concours</em>)</li>
+            <li><strong>Grande École</strong> — 3-year engineering degree</li>
+          </ol>
+          <p>Only the top-ranked students on the national exam gain entry to the most selective schools. ENSAM (Arts et Métiers) is consistently ranked among the top 5 engineering schools in France.</p>
+        </div>
+
+        <div class="modal-section-title">📚 What the workload actually looks like</div>
+        <div class="modal-body-text">
+          <ul>
+            <li><strong>35–45 contact hours per week</strong> of lectures, problem sessions, and oral exams (<em>colles</em>) — roughly double a typical US college courseload</li>
+            <li><strong>Weekly oral examinations</strong> (<em>khôlles</em>): students are called to a blackboard without preparation and must solve advanced problems live in front of a professor — a format with no real US equivalent</li>
+            <li>Subjects covered in PTSI/PT★ include university-level mathematics (analysis, linear algebra, differential equations), advanced physics, thermodynamics, engineering sciences, and technical drawing</li>
+            <li>The PT★ track (which I completed) is the most selective second year within the PTSI stream, reserved for students who rank in the top tier after first year</li>
+          </ul>
+        </div>
+
+        <div class="modal-section-title">🇺🇸 How to think about it if you're American</div>
+        <div class="modal-body-text">
+          <p>A useful frame: imagine the first two years of a top-10 US engineering school (MIT, Caltech, Carnegie Mellon), but:</p>
+          <ul style="margin-top:0.5rem">
+            <li>The entire cohort is equally driven — there is no curve adjustment for the group</li>
+            <li>Admission to the next level is purely rank-based on a single national exam taken by ~50,000 students simultaneously</li>
+            <li>The two years count for nothing on their own — they only matter as preparation for the exam</li>
+          </ul>
+          <p style="margin-top:0.75rem">Completing a Classe Préparatoire and earning a place at ENSAM is roughly comparable in selectivity and academic intensity to being admitted to and completing the first years of a top US engineering program — with the added pressure of the competitive exam format.</p>
+        </div>
+      `
+    }
+  };
+
+  function openInfo(id) {
+    const p = infoPages[id];
+    if (!p) return;
+    document.getElementById('modal-body').innerHTML = `
+      <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 0.8rem;background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.25);border-radius:100px;font-size:0.75rem;font-weight:600;color:#60a5fa;margin-bottom:1rem">ℹ️ Context Note</div>
+      <div class="modal-title">${p.icon} ${p.title}</div>
+      ${p.body}
+    `;
+    document.getElementById('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
   function closeModalBtn() {
     document.getElementById('modal-overlay').classList.remove('open');
     document.body.style.overflow = '';
