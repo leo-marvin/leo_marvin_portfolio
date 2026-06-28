@@ -732,6 +732,7 @@
                 <span class="project-tag-link" onclick="openModal('uav')">🚁 Dassault UAV Challenge</span>
                 <span class="project-tag-link" onclick="openModal('manufacturing')">⚙️ Industrial Manufacturing</span>
                 <span class="project-tag-link" onclick="openModal('gearbox')">🔩 Industrial Gearbox Design</span>
+                <span class="project-tag-link" onclick="openModal('autonomouscar')">🚗 Autonomous Smart Car</span>
                 <span class="project-tag-link" onclick="openModal('cordes')">🤝 Cordées de la Réussite</span>
               </div>
             </div>
@@ -835,6 +836,29 @@
           <span class="skill-chip">OpenCV</span>
           <span class="skill-chip">ArduPilot</span>
           <span class="skill-chip">3D Printing</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openModal('autonomouscar')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Development">Development</span>
+          <span class="project-card-icon">🚗</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Autonomous Smart Car</div>
+          <p class="project-card-desc">
+            Solo embedded systems project — designed and built a Raspberry Pi-powered autonomous car with real-time computer vision, ultrasonic obstacle detection, and PWM motor control.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">👤 <strong>Solo</strong></span>
+            <span class="project-meta-item">📅 <strong>May 2026</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Raspberry Pi</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">OpenCV</span>
+          <span class="skill-chip">Embedded Systems</span>
         </div>
       </div>
 
@@ -1078,6 +1102,22 @@
     <h2>Documents & reports</h2>
     <p class="section-sub">Academic deliverables produced during my studies.</p>
     <div class="work-grid fade-up">
+      <a class="work-item" href="autonomous_car_english_report.pdf" target="_blank" download>
+        <span class="work-icon">🚗</span>
+        <div>
+          <div class="work-title">Autonomous Smart Car — Technical Report (EN)</div>
+          <div class="work-desc">Full technical report on the Raspberry Pi autonomous car — hardware architecture, vision pipeline, and motor control.</div>
+        </div>
+        <span class="work-download">↓ PDF</span>
+      </a>
+      <a class="work-item" href="autonomous_car_french_report.pdf" target="_blank" download>
+        <span class="work-icon">🚗</span>
+        <div>
+          <div class="work-title">Autonomous Smart Car — Rapport Technique (FR)</div>
+          <div class="work-desc">Version française du rapport technique sur le projet de voiture autonome.</div>
+        </div>
+        <span class="work-download">↓ PDF</span>
+      </a>
       <a class="work-item" href="Rapport - Projet Gadz'air - ENSAM.pdf" target="_blank" download>
         <span class="work-icon">🚁</span>
         <div>
@@ -1258,7 +1298,7 @@
         ['Methodology', 'Product Development'],
       ],
       description: `
-        <p>To represent ENSAM at Dassault's 12th UAV Challenge, a team with two student sub-groups were formed with a clear objective: build a competition-ready flying drone from scratch. As co-head of the team and head of AI, I led both the overall project coordination and the development of an onboard computer vision system capable of real-time obstacle detection and avoidance.</p>
+        <p>To represent ENSAM at Dassault's 12th UAV Challenge, two student teams were formed with a clear brief: build a competition-ready flying drone from scratch. As co-head of the first team and head of AI, I led both the overall project coordination and the development of an onboard computer vision system capable of real-time obstacle detection and avoidance.</p>
         <p style="margin-top:0.75rem">The drone had to satisfy four hard requirements: <strong>fully autonomous GPS waypoint navigation</strong>, <strong>real-time AI-powered obstacle avoidance</strong>, <strong>DGAC-compliant safety features</strong> (manual kill switch, Return-To-Launch failsafe), and a <strong>live video downlink</strong> to a ground station.</p>
       `,
       sections: [
@@ -1302,6 +1342,53 @@
       images: ['Dassault_software1.png', 'Dassault_software2.png'],
       video: 'Dassault_software3.mov',
       chips: ['Python', 'YOLOv8n', 'OpenCV', 'Optical Flow', 'ArduPilot', 'SITL', 'PID Control', '3D Printing', 'Carbon PLA']
+    },
+    autonomouscar: {
+      domain: 'Development',
+      icon: '🚗',
+      title: 'Autonomous Smart Car',
+      image: 'autonomous_car1.jpeg',
+      gallery: ['autonomous_car2.jpeg', 'autonomous_car3.jpeg', 'autonomous_car4.jpeg'],
+      reports: [
+        { file: 'autonomous_car_english_presentation.pdf', label: 'Presentation Slides', sub: 'PDF · English', type: 'pdf' },
+        { file: 'autonomous_car_french_presentation.pdf', label: 'Diaporama', sub: 'PDF · Français', type: 'pdf' },
+        { file: 'autonomous_car_english_report.pdf', label: 'Technical Report', sub: 'PDF · English', type: 'pdf' },
+        { file: 'autonomous_car_french_report.pdf', label: 'Rapport Technique', sub: 'PDF · Français', type: 'pdf' },
+      ],
+      meta: [
+        ['Period', 'May 2026'],
+        ['Domain', 'Embedded Systems / Computer Vision'],
+        ['Team size', 'Solo project'],
+        ['Position', 'Designer & Developer'],
+      ],
+      description: `<p>A solo project to design and build a fully autonomous miniature car from scratch using a <strong>Raspberry Pi</strong> as the central processing unit. The goal was to architect an end-to-end embedded system capable of navigating autonomously — combining real-time computer vision, sensor fusion, and motor control within the constraints of a single-board computer.</p>`,
+      sections: [
+        {
+          title: '🔧 Hardware Architecture',
+          body: `<ul>
+            <li><strong>Raspberry Pi</strong> — central processing unit running all vision and control logic</li>
+            <li><strong>USB Webcam</strong> — mounted on the chassis for real-time video capture</li>
+            <li><strong>HC-SR04 Ultrasonic sensor</strong> — front-facing obstacle detection via GPIO</li>
+            <li><strong>L298N Motor Driver</strong> — dual H-bridge controlling left and right DC motors independently</li>
+            <li><strong>Breadboard & wiring</strong> — prototype sensor integration with GPIO pins</li>
+          </ul>`
+        },
+        {
+          title: '💻 Software Architecture',
+          body: `<ul>
+            <li>Written entirely in <strong>Python</strong>, running on Raspbian OS</li>
+            <li><strong>OpenCV</strong> used for real-time frame capture and pixel-zone analysis — detecting target zones to trigger navigation decisions</li>
+            <li>Vision pipeline: capture frame → detect pixel zone → evaluate position → compute motor command</li>
+            <li>Motor speed controlled via <strong>PWM signals</strong> sent through the GPIO pins to the L298N driver</li>
+            <li>Obstacle avoidance loop: ultrasonic distance reading → threshold check → stop or reroute if obstacle detected within safe range</li>
+          </ul>`
+        },
+        {
+          title: '🏆 Outcome',
+          body: `<p>Successfully built and validated a working autonomous navigation prototype. The car was able to detect its environment in real time and make independent driving decisions — demonstrating a full embedded software/hardware integration from sensor input to actuator output.</p>`
+        }
+      ],
+      chips: ['Python', 'Raspberry Pi', 'OpenCV', 'GPIO', 'PWM', 'L298N', 'Ultrasonic Sensor', 'Embedded Systems', 'Computer Vision']
     },
     eddy: {
       domain: 'Research',
@@ -1569,6 +1656,7 @@
         ${p.chips.map(c => `<span class="skill-chip">${c}</span>`).join('')}
       </div>
       ${p.report ? renderReport(p.report) : ''}
+      ${p.reports ? p.reports.map(r => renderReport(r)).join('') : ''}
     `;
     document.getElementById('modal-overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
