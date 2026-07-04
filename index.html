@@ -386,7 +386,12 @@
     .modal-gallery img:hover { transform: scale(1.02); opacity: 0.9; }
     /* Engagement section */
     #engagement { background: var(--bg); }
+    .engagement-subsection { margin-bottom: 2.5rem; }
+    .engagement-subsection-title { font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+    .engagement-subsection-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
     .engagement-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .tag-sports  { background: rgba(52,211,153,0.2); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+    .tag-hobby   { background: rgba(167,139,250,0.2); color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); }
     .activity-card {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 16px; overflow: hidden;
@@ -665,7 +670,7 @@
           </div>
           <div class="stat-card">
             <div class="stat-num">3</div>
-            <div class="stat-label">Languages spoken</div>
+            <div class="stat-label">Languages spoken fluently</div>
           </div>
           <div class="stat-card">
             <div class="stat-num">ENSAM</div>
@@ -1159,70 +1164,162 @@
   <div class="section-inner">
     <p class="section-label">Beyond Engineering</p>
     <h2>Personal engagement</h2>
-    <p class="section-sub">Charity work, community initiatives, and projects I care about outside the classroom.</p>
-    <div class="engagement-grid fade-up">
+    <p class="section-sub">Charity work, community initiatives, personal passions, and sport — what drives me outside the classroom.</p>
 
-      <div class="activity-card" onclick="openModal('restos')">
-        <div class="activity-card-banner">
-          <span class="activity-card-tag tag-charity">Charity</span>
-          <span class="activity-card-banner-emoji">🍽️</span>
-        </div>
-        <div class="activity-card-body">
-          <div class="activity-card-title">Les Restos du Cœur</div>
-          <p class="activity-card-desc">Weekly food distribution and national campaigns for one of France's largest charities — serving up to 200 families per week.</p>
-          <div class="activity-card-meta">
-            <span class="activity-meta-item">📅 <strong>Since July 2023</strong></span>
-            <span class="activity-meta-item">🍽️ <strong>Food Bank</strong></span>
+    <!-- Community & Charity -->
+    <div class="engagement-subsection fade-up">
+      <div class="engagement-subsection-title">🤝 Community &amp; Charity</div>
+      <div class="engagement-grid">
+
+        <div class="activity-card" onclick="openModal('restos')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-charity">Charity</span>
+            <span class="activity-card-banner-emoji">🍽️</span>
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">Les Restos du Cœur</div>
+            <p class="activity-card-desc">Weekly food distribution and national campaigns for one of France's largest charities — serving up to 200 families per week.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">📅 <strong>Since July 2023</strong></span>
+              <span class="activity-meta-item">🍽️ <strong>Food Bank</strong></span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="activity-card" onclick="openModal('gazole')">
-        <div class="activity-card-banner">
-          <span class="activity-card-tag tag-charity">Charity</span>
-          <img src="Gazole_logo.webp" alt="Gazole" />
-        </div>
-        <div class="activity-card-body">
-          <div class="activity-card-title">Gazole — Gadz'Arts Solidaire</div>
-          <p class="activity-card-desc">Secretary of the ENSAM solidarity association — organising blood donation drives, food collections, and the Grand Bastringue music festival.</p>
-          <div class="activity-card-meta">
-            <span class="activity-meta-item">📅 <strong>Since Nov 2025</strong></span>
-            <span class="activity-meta-item">✍️ <strong>Secretary</strong></span>
+        <div class="activity-card" onclick="openModal('gazole')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-charity">Charity</span>
+            <img src="Gazole_logo.webp" alt="Gazole" />
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">Gazole — Gadz'Arts Solidaire</div>
+            <p class="activity-card-desc">Secretary of the ENSAM solidarity association — organising blood donation drives, food collections, and the Grand Bastringue music festival.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">📅 <strong>Since Nov 2025</strong></span>
+              <span class="activity-meta-item">✍️ <strong>Secretary</strong></span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="activity-card" onclick="openModal('regattarts')">
-        <div class="activity-card-banner">
-          <span class="activity-card-tag tag-design">Competition</span>
-          <img src="regattarts_logo.webp" alt="Regatt'Arts" />
-        </div>
-        <div class="activity-card-body">
-          <div class="activity-card-title">Regatt'Arts — Monaco Energy Boat Challenge</div>
-          <p class="activity-card-desc">Head of Sponsoring for ENSAM's entry in the international clean-energy boat racing competition held in Monaco. Secured €30,000 in funding.</p>
-          <div class="activity-card-meta">
-            <span class="activity-meta-item">📅 <strong>Since Feb 2026</strong></span>
-            <span class="activity-meta-item">💶 <strong>€30K raised</strong></span>
+        <div class="activity-card" onclick="openModal('regattarts')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-design">Competition</span>
+            <img src="regattarts_logo.webp" alt="Regatt'Arts" />
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">Regatt'Arts — Monaco Energy Boat Challenge</div>
+            <p class="activity-card-desc">Head of Sponsoring for ENSAM's entry in the international clean-energy boat racing competition held in Monaco. Secured €30,000 in funding.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">📅 <strong>Since Feb 2026</strong></span>
+              <span class="activity-meta-item">💶 <strong>€30K raised</strong></span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="activity-card" onclick="openModal('cordes')">
-        <div class="activity-card-banner">
-          <span class="activity-card-tag tag-charity">Mentoring</span>
-          <span class="activity-card-banner-emoji">🎓</span>
-        </div>
-        <div class="activity-card-body">
-          <div class="activity-card-title">Cordées de la Réussite</div>
-          <p class="activity-card-desc">National mentoring programme connecting ENSAM students with high schoolers from priority education zones — organising campus visits and demos.</p>
-          <div class="activity-card-meta">
-            <span class="activity-meta-item">📅 <strong>Since Sept 2025</strong></span>
-            <span class="activity-meta-item">👥 <strong>Team of 20</strong></span>
+        <div class="activity-card" onclick="openModal('cordes')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-charity">Mentoring</span>
+            <span class="activity-card-banner-emoji">🎓</span>
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">Cordées de la Réussite</div>
+            <p class="activity-card-desc">National mentoring programme connecting ENSAM students with high schoolers from priority education zones — organising campus visits and demos.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">📅 <strong>Since Sept 2025</strong></span>
+              <span class="activity-meta-item">👥 <strong>Team of 20</strong></span>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
+
+    <!-- Personal Interests -->
+    <div class="engagement-subsection fade-up">
+      <div class="engagement-subsection-title">🎨 Personal Interests</div>
+      <div class="engagement-grid">
+
+        <div class="activity-card" onclick="openModal('piano')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-hobby">Music</span>
+            <span class="activity-card-banner-emoji">🎹</span>
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">Piano</div>
+            <p class="activity-card-desc">Self-taught pianist — classical repertoire and improvisation. Playing is my way of switching off from technical work and staying creative.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">🎹 <strong>Classical &amp; Improv</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="activity-card" onclick="openModal('reading')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-hobby">Reading</span>
+            <span class="activity-card-banner-emoji">📚</span>
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">Reading</div>
+            <p class="activity-card-desc">Avid reader across history, philosophy, and science. Books help me build context for engineering and keep curiosity alive beyond the technical sphere.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">📖 <strong>History · Philosophy · Science</strong></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Sports -->
+    <div class="engagement-subsection fade-up">
+      <div class="engagement-subsection-title">🏃 Sports</div>
+      <div class="engagement-grid">
+
+        <div class="activity-card" onclick="openModal('running')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-sports">Sport</span>
+            <span class="activity-card-banner-emoji">🏃</span>
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">Running</div>
+            <p class="activity-card-desc">Regular long-distance runner — a discipline that builds resilience and mental clarity alongside physical endurance.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">🏅 <strong>Long Distance</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="activity-card" onclick="openModal('cycling')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-sports">Sport</span>
+            <span class="activity-card-banner-emoji">🚴</span>
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">Cycling</div>
+            <p class="activity-card-desc">Road cycling enthusiast — combining endurance training with exploring the French countryside on long weekend rides.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">🚵 <strong>Road Cycling</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="activity-card" onclick="openModal('frenchboxing')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-sports">Sport</span>
+            <span class="activity-card-banner-emoji">🥊</span>
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">French Boxing (Savate)</div>
+            <p class="activity-card-desc">Practising savate — the French martial art combining punches and high kicks. Training sharpens discipline, coordination, and mental toughness.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">🥊 <strong>Savate</strong></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1596,6 +1693,131 @@
         }
       ],
       chips: ['Mentoring', 'Event Organisation', 'Communication', 'Community Engagement']
+    },
+    piano: {
+      domain: 'Personal Interest',
+      icon: '🎹',
+      title: 'Piano',
+      meta: [
+        ['Experience', '6 years of lessons'],
+        ['Genre', 'Classical & Exploring'],
+        ['Theory', 'Solfège — French & English notation'],
+      ],
+      description: `<p>I studied piano for six years under a private teacher, building a solid foundation in classical repertoire and music theory. Beyond technique, lessons included solfège in both the French (do-ré-mi) and English (C-D-E) notation systems. Over time I've moved beyond purely classical music, enjoying the exploration of other genres whenever the opportunity arises.</p>`,
+      sections: [
+        {
+          title: '🎵 What I play',
+          body: `<ul>
+            <li>Classical repertoire — the foundation of my training</li>
+            <li>Exploring other genres: jazz, film scores, contemporary pieces</li>
+            <li>Solfège fluency in both French and English notation</li>
+          </ul>`
+        },
+        {
+          title: '🎤 Performances',
+          body: `<p>Took part in <strong>5 local concerts</strong> organised by my teacher — performing solo in front of an audience and learning to manage stage presence alongside musical precision.</p>`
+        }
+      ],
+      chips: ['Classical', '6 Years Training', 'Solfège', 'Live Performance', 'Music Theory']
+    },
+    reading: {
+      domain: 'Personal Interest',
+      icon: '📚',
+      title: 'Reading',
+      meta: [
+        ['Genres', 'History · Popular Science · Fiction'],
+        ['Languages', 'French & English'],
+      ],
+      description: `<p>Reading is how I build context beyond the technical. I gravitate towards history, popular science, and fiction — books that help me understand how systems and people behave, and that keep curiosity alive outside the engineering sphere.</p>`,
+      sections: [
+        {
+          title: '📖 Favourite themes',
+          body: `<ul>
+            <li>Military and political history</li>
+            <li>Popular science — physics, cosmology, energy technology</li>
+            <li>Anthropology and the long arc of human civilisation</li>
+            <li>Detective fiction</li>
+          </ul>`
+        },
+        {
+          title: '📚 Recent reads',
+          body: `<ul>
+            <li><strong>L'Étrange Défaite</strong> — Marc Bloch (1940) · A lucid historian's first-hand analysis of France's collapse in WWII — as much about institutional failure as military defeat.</li>
+            <li><strong>Hercule Poirot series</strong> — Agatha Christie · Several novels and short-story collections featuring the famous Belgian detective.</li>
+            <li><strong>A Brief History of Time</strong> — Stephen Hawking · A classic introduction to cosmology, black holes, and the nature of time.</li>
+            <li><strong>Sapiens: A Brief History of Humankind</strong> — Yuval Noah Harari · A sweeping account of how <em>Homo sapiens</em> came to dominate the planet through cognitive, agricultural, and scientific revolutions.</li>
+            <li><strong>The Star Builders: Nuclear Fusion and the Race to Power the Planet</strong> — Arthur Turrell · An inside look at the private and public race to make fusion energy a reality — particularly relevant given my interest in energy systems.</li>
+          </ul>`
+        }
+      ],
+      chips: ['History', 'Popular Science', 'Detective Fiction', 'French & English', 'Cosmology', 'Energy']
+    },
+    running: {
+      domain: 'Sport',
+      icon: '🏃',
+      title: 'Running',
+      meta: [
+        ['Discipline', 'Long Distance'],
+        ['Training', 'Regular sessions, outdoor'],
+      ],
+      description: `<p>Long-distance running is a cornerstone of my physical and mental routine. Training consistently builds the kind of resilience that carries over into academic and project work — the ability to push through difficulty and maintain pace under pressure.</p>`,
+      sections: [
+        {
+          title: '🏅 Practice',
+          body: `<ul>
+            <li>Regular outdoor runs — roads and trails</li>
+            <li>Building endurance over distances of 10 km and beyond</li>
+            <li>Using running as active recovery and stress management</li>
+          </ul>`
+        }
+      ],
+      chips: ['Endurance', 'Long Distance', 'Outdoor', 'Discipline']
+    },
+    cycling: {
+      domain: 'Sport',
+      icon: '🚴',
+      title: 'Cycling',
+      meta: [
+        ['Discipline', 'Road Cycling'],
+        ['Terrain', 'French countryside & hills'],
+      ],
+      description: `<p>Road cycling combines endurance training with genuine exploration. Weekend rides through the French countryside are as much about discovering landscape as they are about physical effort — a sport that rewards patience and preparation.</p>`,
+      sections: [
+        {
+          title: '🚵 Practice',
+          body: `<ul>
+            <li>Long weekend road rides across varied terrain</li>
+            <li>Endurance-focused training with progressive distance</li>
+            <li>Exploring rural France on two wheels</li>
+          </ul>`
+        }
+      ],
+      chips: ['Road Cycling', 'Endurance', 'Outdoors', 'France']
+    },
+    frenchboxing: {
+      domain: 'Sport',
+      icon: '🥊',
+      title: 'French Boxing — Savate',
+      meta: [
+        ['Discipline', 'Savate (Boxe Française)'],
+        ['Style', 'Punches & high kicks'],
+      ],
+      description: `<p>Savate — or boxe française — is the French martial art that combines punching techniques with precise, high-line kicking, making it unique among combat sports. Training develops coordination, reflexes, and mental composure under pressure.</p>`,
+      sections: [
+        {
+          title: '🥋 About Savate',
+          body: `<p>Unlike most striking arts, savate scores on elegance and accuracy rather than raw power. It is an Olympic demonstration sport with a rich competitive tradition, and one of France's most distinctive contributions to martial arts.</p>`
+        },
+        {
+          title: '💪 What I train',
+          body: `<ul>
+            <li>Technical striking — chassé, fouetté, revers kicks</li>
+            <li>Footwork and distance management</li>
+            <li>Sparring and combination drills</li>
+          </ul>`
+        }
+      ],
+      chips: ['Savate', 'Martial Arts', 'Discipline', 'Coordination']
     }
   };
 
