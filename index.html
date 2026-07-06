@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1270,6 +1270,29 @@
       </div>
     </div>
 
+    <!-- Personal Projects -->
+    <div class="engagement-subsection fade-up">
+      <div class="engagement-subsection-title">💡 Personal Projects</div>
+      <div class="engagement-grid">
+
+        <div class="activity-card" onclick="openModal('chatbot')">
+          <div class="activity-card-banner">
+            <span class="activity-card-tag tag-design">Software</span>
+            <span class="activity-card-banner-emoji">🤖</span>
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-title">LLM-Powered Web Chatbot</div>
+            <p class="activity-card-desc">A fully functional web chatbot built in Python with Streamlit, powered by Google's Gemini API — with streaming, conversation persistence, and real-time configuration.</p>
+            <div class="activity-card-meta">
+              <span class="activity-meta-item">📅 <strong>July 2026</strong></span>
+              <span class="activity-meta-item">💻 <strong>Python · Streamlit · Gemini</strong></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- Sports -->
     <div class="engagement-subsection fade-up">
       <div class="engagement-subsection-title">🏃 Sports</div>
@@ -1693,6 +1716,52 @@
         }
       ],
       chips: ['Mentoring', 'Event Organisation', 'Communication', 'Community Engagement']
+    },
+    chatbot: {
+      domain: 'Personal Project',
+      icon: '🤖',
+      title: 'LLM-Powered Web Chatbot',
+      meta: [
+        ['Date', 'July 2026'],
+        ['Stack', 'Python · Streamlit · Google Gemini API'],
+        ['Team', 'Solo project'],
+        ['Language', 'Python'],
+      ],
+      description: `<p>A fully functional conversational chatbot with a web interface, built end-to-end in Python. The application queries Google's Gemini LLM through an API, manages conversation history, streams responses token-by-token, and persists exchanges as JSON files. The project was also an opportunity to document and understand the core principles behind LLM-based systems — tokenization, stateless API design, system prompts, and the client-server architecture.</p>`,
+      sections: [
+        {
+          title: '⚙️ Technical Stack',
+          body: `<ul>
+            <li><strong>Streamlit</strong> — Python framework for building the interactive web interface without HTML/CSS/JS</li>
+            <li><strong>google-genai SDK</strong> — official Python SDK for querying Google's Gemini models (Flash 2.5, Pro 2.5, Flash 2.0) with native streaming</li>
+            <li><strong>python-dotenv</strong> — secure API key management via a local <code>.env</code> file, never exposed in source code</li>
+          </ul>`
+        },
+        {
+          title: '✨ Features',
+          body: `<ul>
+            <li><strong>Streaming interface</strong> — responses appear progressively with a typewriter effect as tokens are generated</li>
+            <li><strong>Real-time configuration</strong> — sidebar lets the user switch Gemini model, edit the system prompt, and supply an API key on the fly</li>
+            <li><strong>Conversation persistence</strong> — conversations are saved as timestamped JSON files and reloadable from a dropdown</li>
+            <li><strong>One-click startup</strong> — a <code>lancer.bat</code> script wraps environment activation and server launch for Windows</li>
+          </ul>`
+        },
+        {
+          title: '🧠 Key Concepts Explored',
+          body: `<ul>
+            <li>How LLMs work: Transformer architecture, next-token prediction, emergent behaviour</li>
+            <li>Tokenization and its implications for API billing and context limits</li>
+            <li>Stateless nature of LLM APIs — conversation history must be resent in full on every turn</li>
+            <li>System prompts and prompt engineering</li>
+            <li>Client-API architecture: the application is a client; the intelligence lives on the provider's infrastructure</li>
+          </ul>`
+        }
+      ],
+      reports: [
+        { file: 'Chatbot%20Project%20report%20English.pdf', label: 'Project Report', sub: 'PDF · English', type: 'pdf' },
+        { file: 'Chatbot%20Project%20report%20francais.pdf', label: 'Rapport de Projet', sub: 'PDF · Français', type: 'pdf' },
+      ],
+      chips: ['Python', 'Streamlit', 'Google Gemini', 'LLM', 'API', 'Streaming', 'Solo Project']
     },
     piano: {
       domain: 'Personal Interest',
