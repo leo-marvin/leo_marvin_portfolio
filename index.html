@@ -303,6 +303,21 @@
     .domain-Manufacturing { background: rgba(245,166,35,0.15); color: var(--accent); border: 1px solid rgba(245,166,35,0.3); }
     .domain-Research { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
     .domain-Charity { background: rgba(251,113,133,0.15); color: #fb7185; border: 1px solid rgba(251,113,133,0.3); }
+    .domain-Industry { background: rgba(56,189,248,0.15); color: #38bdf8; border: 1px solid rgba(56,189,248,0.3); }
+    .domain-Agriculture { background: rgba(163,230,53,0.13); color: #a3e635; border: 1px solid rgba(163,230,53,0.28); }
+    /* Professional experience */
+    #experience { background: var(--bg2); }
+    .cover-showcase { display: flex; flex-direction: column; align-items: center; margin: 0 0 1.6rem; }
+    .cover-showcase img {
+      max-height: 640px; width: auto; max-width: 100%;
+      border-radius: 10px; border: 1px solid var(--border);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.45); background: #fff;
+    }
+    .cover-showcase figcaption {
+      font-size: 0.78rem; color: var(--text2); margin-top: 0.8rem;
+      text-align: center; max-width: 460px; line-height: 1.6;
+    }
+    @media (max-width: 640px) { .cover-showcase img { max-height: 420px; } }
     .project-card-icon { font-size: 2rem; }
     .project-card-body { padding: 0 1.5rem 1.5rem; }
     .project-card-title {
@@ -584,6 +599,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#cv">CV</a></li>
@@ -803,6 +819,70 @@
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label">Professional experience</p>
+    <h2>On the shop floor and in the field</h2>
+    <p class="section-sub">Hands-on work experience, from industrial production to summer jobs</p>
+    <div class="projects-grid fade-up">
+
+      <div class="project-card" onclick="openModal('stagegris')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Industry">Industry</span>
+          <span class="project-card-icon">🏭</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Shop Floor Internship &mdash; GRIS D&eacute;coupage</div>
+          <p class="project-card-desc">
+            First-year ENSAM &laquo;&nbsp;stage ouvrier&nbsp;&raquo; at a metal stamping manufacturer supplying the
+            automotive industry. Worked in the sorting &amp; inspection department on automated and manual
+            quality control of stamped components.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">🏢 <strong>GRIS D&eacute;coupage</strong></span>
+            <span class="project-meta-item">📍 <strong>Lesm&eacute;nils (54)</strong></span>
+            <span class="project-meta-item">📅 <strong>July &ndash; August 2026</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Metal Stamping</span>
+          <span class="skill-chip">Quality Control</span>
+          <span class="skill-chip">Automated Sorting</span>
+          <span class="skill-chip">Industrial Safety</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openModal('maraicher')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Agriculture">Agriculture</span>
+          <span class="project-card-icon">🌱</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Seasonal Market Gardener &mdash; GAEC Chateau</div>
+          <p class="project-card-desc">
+            Summer job on a market gardening farm &mdash; two months as a seasonal worker, doing crop
+            maintenance, harvesting and preparing produce for local markets.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">🏢 <strong>GAEC Chateau</strong></span>
+            <span class="project-meta-item">📍 <strong>Hermeray, France</strong></span>
+            <span class="project-meta-item">📅 <strong>July &ndash; August 2025</strong></span>
+            <span class="project-meta-item">☀️ <strong>Summer job</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Field Work</span>
+          <span class="skill-chip">Harvesting</span>
+          <span class="skill-chip">Market Preparation</span>
+          <span class="skill-chip">Teamwork</span>
         </div>
       </div>
 
@@ -1404,6 +1484,83 @@
 
 <script>
   const projects = {
+    stagegris: {
+      domain: 'Industry',
+      icon: '🏭',
+      title: 'Shop Floor Internship — GRIS Découpage',
+      gallery: ['gris_factory1.jpeg', 'gris_factory2.webp'],
+      meta: [
+        ['Company', 'GRIS Découpage (GRIS Group)'],
+        ['Location', 'Lesménils, Meurthe-et-Moselle (54), France'],
+        ['Period', 'July – August 2026'],
+        ['Domain', 'Metal stamping / Automotive supply chain'],
+        ['Position', 'Shop floor intern — sorting &amp; inspection department'],
+        ['Programme', 'ENSAM first-year &laquo; stage ouvrier &raquo;'],
+      ],
+      description: `
+        <figure class="cover-showcase">
+          <img src="gris_report_cover.png" alt="Cover of the internship report — Rapport de Stage Ouvrier, GRIS Découpage" />
+          <figcaption>Cover of my internship report. The report itself is <strong>confidential</strong> and cannot be published.</figcaption>
+        </figure>
+        <p>The <strong>stage ouvrier</strong> is the first internship in the Arts et Métiers curriculum: a full immersion on the shop floor, working alongside operators rather than engineers. I spent it at <strong>GRIS Découpage</strong>, a family-founded metal stamping company created in 1984 in Lesménils (Lorraine), which produces washers and small mechanical components for the automotive industry.</p>
+        <p style="margin-top:0.75rem">I was assigned to the <strong>sorting and inspection department</strong> (secteur Tri), the stage where stamped parts are checked before they are packed and shipped to customers — the last line of defence on outgoing quality.</p>
+      `,
+      sections: [
+        {
+          title: '🔧 What I Did',
+          body: `<ul>
+            <li>Worked as an operator on the sorting line: loading, monitoring and unloading <strong>automated inspection machines</strong> that check stamped parts by vision and by gauge</li>
+            <li>Carried out <strong>manual visual inspection</strong> of batches, separating conforming parts from rejects (&laquo; pièces bonnes &raquo; / rejects) against the customer specification</li>
+            <li>Handled packing and identification of finished batches, following the traceability rules attached to each production order</li>
+            <li>Followed the standard shop-floor routine: shift rhythm, safety rules, PPE, and the housekeeping expected at each workstation</li>
+          </ul>`
+        },
+        {
+          title: '💡 What I Took Away',
+          body: `<ul>
+            <li>A concrete feel for <strong>high-volume production</strong>: cycle times, batch logic, and how much a small defect rate costs when parts are produced by the hundreds of thousands</li>
+            <li>An understanding of quality as an <strong>organisational system</strong> — procedures, traceability and human attention — rather than a single machine or measurement</li>
+            <li>Direct experience of the operator&rsquo;s point of view, which is exactly the perspective an engineer designing a process needs and rarely gets</li>
+            <li>The reflex of asking the people who run the machines before assuming how a process works</li>
+          </ul>`
+        },
+        {
+          title: '🔒 Confidentiality',
+          body: `<p>The full internship report is <strong>confidential</strong> at the company&rsquo;s request and is not published here. The images on this page are limited to the report cover and the factory photographs I was authorised share.</p>`
+        }
+      ],
+      chips: ['Metal Stamping', 'Quality Control', 'Automated Sorting', 'Visual Inspection', 'Traceability', 'Industrial Safety', 'Shop Floor Operations']
+    },
+    maraicher: {
+      domain: 'Agriculture',
+      icon: '🌱',
+      title: 'Seasonal Market Gardener — GAEC Chateau',
+      meta: [
+        ['Company', 'GAEC Chateau'],
+        ['Location', 'Hermeray, Yvelines (78), France'],
+        ['Period', 'July – August 2025'],
+        ['Domain', 'Market gardening / Agriculture'],
+        ['Position', 'Seasonal worker'],
+        ['Type', 'Summer job'],
+      ],
+      description: `<p>A <strong>summer job</strong>: two months as a seasonal worker on a market gardening farm in Hermeray, joining the small team through the peak of the harvest season between two academic years.</p>`,
+      sections: [
+        {
+          title: '🚜 On the Farm',
+          body: `<ul>
+            <li><strong>Crop maintenance</strong> — weeding, watering and tending the beds through the growing season</li>
+            <li><strong>Harvesting</strong> produce by hand at the right stage of ripeness, sorting out what would not hold until sale</li>
+            <li><strong>Market preparation</strong> — washing, grading, weighing and crating produce so it was ready for the local markets</li>
+            <li>Early starts and physically demanding days, with the working plan changing according to the weather and what was ready to pick</li>
+          </ul>`
+        },
+        {
+          title: '💡 What I Took Away',
+          body: `<p>Reliability and stamina in a job where the work has to be done when the season says so, not when it is convenient — and a first-hand look at how a small business plans production, manages perishable stock and sells directly to its customers.</p>`
+        }
+      ],
+      chips: ['Field Work', 'Harvesting', 'Market Preparation', 'Manual Labour', 'Teamwork', 'Reliability']
+    },
     uav: {
       domain: 'Development',
       icon: '🚁',
