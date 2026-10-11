@@ -302,6 +302,7 @@
     .domain-Development { background: rgba(107,69,200,0.2); color: #a78bfa; border: 1px solid rgba(107,69,200,0.3); }
     .domain-Manufacturing { background: rgba(245,166,35,0.15); color: var(--accent); border: 1px solid rgba(245,166,35,0.3); }
     .domain-Research { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+    .domain-Biomechanics { background: rgba(232,121,249,0.15); color: #e879f9; border: 1px solid rgba(232,121,249,0.3); }
     .domain-Charity { background: rgba(251,113,133,0.15); color: #fb7185; border: 1px solid rgba(251,113,133,0.3); }
     .domain-Industry { background: rgba(56,189,248,0.15); color: #38bdf8; border: 1px solid rgba(56,189,248,0.3); }
     .domain-Agriculture { background: rgba(163,230,53,0.13); color: #a3e635; border: 1px solid rgba(163,230,53,0.28); }
@@ -599,8 +600,8 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
-    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#cv">CV</a></li>
     <li><a href="#work">Documents</a></li>
@@ -618,8 +619,8 @@
       <div class="hero-tag">Open to opportunities</div>
       <h1>Hi, I'm<br><span class="accent">Leo Marvin</span></h1>
       <p class="hero-desc">
-        Franco-British Mechanical Engineering student at <strong>Arts et Métiers (ENSAM) in Châlons-en-Champagne and Paris</strong>, bridging
-        hands-on manufacturing, innovation with AI development, and applied research.
+        Franco-British Mechanical Engineering student at <strong>ENSAM Châlons-en-Champagne</strong>, bridging
+        hands-on manufacturing, AI development, and applied research.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View my projects →</a>
@@ -754,6 +755,7 @@
                 <span class="project-tag-link" onclick="openModal('manufacturing')">⚙️ Industrial Manufacturing</span>
                 <span class="project-tag-link" onclick="openModal('gearbox')">🔩 Industrial Gearbox Design</span>
                 <span class="project-tag-link" onclick="openModal('autonomouscar')">🚗 Autonomous Smart Car</span>
+                <span class="project-tag-link" onclick="openModal('prosthesis')">🦴 Shoulder Prosthesis Study</span>
                 <span class="project-tag-link" onclick="openModal('cordes')">🤝 Cordées de la Réussite</span>
               </div>
             </div>
@@ -826,70 +828,6 @@
   </div>
 </section>
 
-<!-- PROFESSIONAL EXPERIENCE -->
-<section id="experience">
-  <div class="section-inner">
-    <p class="section-label">Professional experience</p>
-    <h2>On the shop floor and in the field</h2>
-    <p class="section-sub">Hands-on work experience, from industrial production to summer jobs</p>
-    <div class="projects-grid fade-up">
-
-      <div class="project-card" onclick="openModal('stagegris')">
-        <div class="project-card-header">
-          <span class="project-domain domain-Industry">Industry</span>
-          <span class="project-card-icon">🏭</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-card-title">Shop Floor Internship &mdash; GRIS D&eacute;coupage</div>
-          <p class="project-card-desc">
-            First-year ENSAM &laquo;&nbsp;stage ouvrier&nbsp;&raquo; at a metal stamping manufacturer supplying the
-            automotive industry. Worked in the sorting &amp; inspection department on automated and manual
-            quality control of stamped components.
-          </p>
-          <div class="project-meta">
-            <span class="project-meta-item">🏢 <strong>GRIS D&eacute;coupage</strong></span>
-            <span class="project-meta-item">📍 <strong>Lesm&eacute;nils (54)</strong></span>
-            <span class="project-meta-item">📅 <strong>July &ndash; August 2026</strong></span>
-          </div>
-        </div>
-        <div class="project-card-footer">
-          <span class="skill-chip">Metal Stamping</span>
-          <span class="skill-chip">Quality Control</span>
-          <span class="skill-chip">Automated Sorting</span>
-          <span class="skill-chip">Industrial Safety</span>
-        </div>
-      </div>
-
-      <div class="project-card" onclick="openModal('maraicher')">
-        <div class="project-card-header">
-          <span class="project-domain domain-Agriculture">Agriculture</span>
-          <span class="project-card-icon">🌱</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-card-title">Seasonal Market Gardener &mdash; GAEC Chateau</div>
-          <p class="project-card-desc">
-            Summer job on a market gardening farm &mdash; two months as a seasonal worker, doing crop
-            maintenance, harvesting and preparing produce for local markets.
-          </p>
-          <div class="project-meta">
-            <span class="project-meta-item">🏢 <strong>GAEC Chateau</strong></span>
-            <span class="project-meta-item">📍 <strong>Hermeray, France</strong></span>
-            <span class="project-meta-item">📅 <strong>July &ndash; August 2025</strong></span>
-            <span class="project-meta-item">☀️ <strong>Summer job</strong></span>
-          </div>
-        </div>
-        <div class="project-card-footer">
-          <span class="skill-chip">Field Work</span>
-          <span class="skill-chip">Harvesting</span>
-          <span class="skill-chip">Market Preparation</span>
-          <span class="skill-chip">Teamwork</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
@@ -921,6 +859,29 @@
           <span class="skill-chip">OpenCV</span>
           <span class="skill-chip">ArduPilot</span>
           <span class="skill-chip">3D Printing</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openModal('prosthesis')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Biomechanics">Biomechanics</span>
+          <span class="project-card-icon">🦴</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Shoulder Prosthesis — Loosening Study</div>
+          <p class="project-card-desc">
+            Studying shoulder prosthesis loosening (descellement) through rocking horse experiments (Anglin protocol) and finite element modelling — with the goal of improving implant design.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">🏫 <strong>ENSAM</strong></span>
+            <span class="project-meta-item">📅 <strong>Sept 2026 – ongoing</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Biomechanics</span>
+          <span class="skill-chip">FEA</span>
+          <span class="skill-chip">CATIA</span>
+          <span class="skill-chip">Experimental Testing</span>
         </div>
       </div>
 
@@ -1018,6 +979,70 @@
         </div>
       </div>
 
+
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label">Professional experience</p>
+    <h2>On the shop floor and in the field</h2>
+    <p class="section-sub">Hands-on work experience, from industrial production to summer jobs</p>
+    <div class="projects-grid fade-up">
+
+      <div class="project-card" onclick="openModal('stagegris')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Industry">Industry</span>
+          <span class="project-card-icon">🏭</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Shop Floor Internship &mdash; GRIS D&eacute;coupage</div>
+          <p class="project-card-desc">
+            First-year ENSAM &laquo;&nbsp;stage ouvrier&nbsp;&raquo; at a metal stamping manufacturer supplying the
+            automotive industry. Worked in the sorting &amp; inspection department on automated and manual
+            quality control of stamped components.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">🏢 <strong>GRIS D&eacute;coupage</strong></span>
+            <span class="project-meta-item">📍 <strong>Lesm&eacute;nils (54)</strong></span>
+            <span class="project-meta-item">📅 <strong>July &ndash; August 2026</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Metal Stamping</span>
+          <span class="skill-chip">Quality Control</span>
+          <span class="skill-chip">Automated Sorting</span>
+          <span class="skill-chip">Industrial Safety</span>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openModal('maraicher')">
+        <div class="project-card-header">
+          <span class="project-domain domain-Agriculture">Agriculture</span>
+          <span class="project-card-icon">🌱</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Seasonal Market Gardener &mdash; GAEC Chateau</div>
+          <p class="project-card-desc">
+            Summer job on a market gardening farm &mdash; two months as a seasonal worker, doing crop
+            maintenance, harvesting and preparing produce for local markets.
+          </p>
+          <div class="project-meta">
+            <span class="project-meta-item">🏢 <strong>GAEC Chateau</strong></span>
+            <span class="project-meta-item">📍 <strong>Hermeray, France</strong></span>
+            <span class="project-meta-item">📅 <strong>July &ndash; August 2025</strong></span>
+            <span class="project-meta-item">☀️ <strong>Summer job</strong></span>
+          </div>
+        </div>
+        <div class="project-card-footer">
+          <span class="skill-chip">Field Work</span>
+          <span class="skill-chip">Harvesting</span>
+          <span class="skill-chip">Market Preparation</span>
+          <span class="skill-chip">Teamwork</span>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -1620,6 +1645,38 @@
       images: ['Dassault_software1.png', 'Dassault_software2.png'],
       video: 'Dassault_software3.mov',
       chips: ['Python', 'YOLOv8n', 'OpenCV', 'Optical Flow', 'ArduPilot', 'SITL', 'PID Control', '3D Printing', 'Carbon PLA']
+    },
+    prosthesis: {
+      domain: 'Biomechanics',
+      icon: '🦴',
+      title: 'Shoulder Prosthesis — Loosening Study',
+      image: 'prosthesis_cad.webp',
+      meta: [
+        ['Period', 'September 2026 — ongoing'],
+        ['Domain', 'Biomechanics & Structural Mechanics'],
+        ['Institution', 'ENSAM'],
+        ['Methods', 'Experimental testing · Finite Element Analysis'],
+      ],
+      description: `<p>This ongoing ENSAM research project investigates the phenomenon of <strong>shoulder prosthesis loosening</strong> (<em>descellement de la prothèse d'épaule</em>) — one of the primary causes of long-term implant failure requiring revision surgery. The project combines physical experimentation and numerical modelling to better understand the mechanical conditions that lead to loosening, with the broader goal of informing improved implant design.</p>`,
+      sections: [
+        {
+          title: '🔬 Approach',
+          body: `<ul>
+            <li><strong>Experimental testing</strong> — characterising the behaviour of existing shoulder implants using the <em>rocking horse</em> protocol (Anglin), a standardised cyclic loading test that replicates physiological stress on the glenoid component</li>
+            <li><strong>Finite Element Modelling (FEM)</strong> — building a numerical model of the prosthesis–bone interface to simulate stress distribution, micromotion, and loosening mechanisms under realistic loading conditions</li>
+            <li><strong>CAD modelling</strong> — 3D reconstruction of prosthetic components in CATIA for FEM mesh preparation and design iterations</li>
+          </ul>`
+        },
+        {
+          title: '🎯 Objectives',
+          body: `<ul>
+            <li>Quantify the mechanical conditions (stress, micromotion) that initiate loosening at the bone–implant interface</li>
+            <li>Validate the FEM model against experimental Anglin rocking horse data</li>
+            <li>Identify design parameters that could reduce loosening risk in next-generation shoulder implants</li>
+          </ul>`
+        }
+      ],
+      chips: ['Biomechanics', 'FEA', 'CATIA', 'Rocking Horse Test', 'Anglin Protocol', 'Implant Design', 'Structural Mechanics']
     },
     autonomouscar: {
       domain: 'Development',
