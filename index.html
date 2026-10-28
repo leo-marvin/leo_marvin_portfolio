@@ -1228,11 +1228,19 @@
         </div>
         <span class="work-download">↓ PDF</span>
       </a>
+      <a class="work-item" href="uav_report_english.pdf" target="_blank" download>
+        <span class="work-icon">🚁</span>
+        <div>
+          <div class="work-title">Dassault UAV — Mid-Project Report (EN)</div>
+          <div class="work-desc">Progress report for the Dassault UAV Challenge — AI architecture, mechanical design choices, and autonomous flight stack.</div>
+        </div>
+        <span class="work-download">↓ PDF</span>
+      </a>
       <a class="work-item" href="Rapport - Projet Gadz'air - ENSAM.pdf" target="_blank" download>
         <span class="work-icon">🚁</span>
         <div>
-          <div class="work-title">Dassault UAV — Mid-Project Report</div>
-          <div class="work-desc">Progress report for the Dassault UAV Challenge — AI architecture, mechanical design choices, and autonomous flight stack. (French)</div>
+          <div class="work-title">Drone Dassault — Rapport de mi-projet (FR)</div>
+          <div class="work-desc">Version française du rapport de mi-projet pour le Dassault UAV Challenge.</div>
         </div>
         <span class="work-download">↓ PDF</span>
       </a>
@@ -1598,7 +1606,10 @@
       domain: 'Development',
       icon: '🚁',
       title: 'Dassault UAV Challenge',
-      report: { file: "Rapport - Projet Gadz'air - ENSAM.pdf", label: 'Mid-Project Report', sub: 'PDF · French version', type: 'pdf' },
+      reports: [
+        { file: 'uav_report_english.pdf', label: 'Mid-Project Report', sub: 'PDF · English · 28 pages', type: 'pdf' },
+        { file: "Rapport - Projet Gadz'air - ENSAM.pdf", label: 'Rapport de mi-projet', sub: 'PDF · Français', type: 'pdf' }
+      ],
       meta: [
         ['Client', 'Dassault Aviation'],
         ['Period', 'September 2025 – January 2026'],
