@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Mechanical Engineering Portfolio</title>
+<meta name="description" content="Mechanical engineering student portfolio: projects, skills and experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f8fb; --surface:#ffffff; --ink:#13203a; --muted:#5b6778;
+  --line:#13203a; --soft:#d5dce7; --dim:#1f5fbf; --signal:#f25c05;
+  --font-head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --font-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0e1626;--surface:#142038;--ink:#e8edf6;--muted:#9aa7bb;--line:#e8edf6;--soft:#2a3858;--dim:#6aa3ff;--signal:#ff8a3d}
+}
+:root[data-theme="dark"]{--paper:#0e1626;--surface:#142038;--ink:#e8edf6;--muted:#9aa7bb;--line:#e8edf6;--soft:#2a3858;--dim:#6aa3ff;--signal:#ff8a3d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--font-body)}
+a{color:var(--dim)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--font-head);line-height:1.1;margin:0}
+h2{font-size:2rem;font-weight:700;margin-bottom:.5rem}
+.lede{color:var(--muted);max-width:60ch;margin:0 0 2rem}
+section{padding:4.5rem 0;border-top:1px solid var(--soft)}
+header.top{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--soft);z-index:5}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.8rem;padding-bottom:.8rem;flex-wrap:wrap}
+header.top strong{font-family:var(--font-head);font-size:1.15rem}
+nav a{margin-left:1.25rem;text-decoration:none;color:var(--ink);font-weight:500}
+nav a:hover{color:var(--signal)}
+
+/* Hero */
+.hero{padding:4rem 0 4.5rem;border-top:0}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;letter-spacing:-.03em;max-width:15ch}
+.hero p.pitch{font-size:1.25rem;max-width:46ch;margin:1.25rem 0 2rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn{display:inline-block;padding:.7rem 1.25rem;border:2px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600}
+.btn.primary{background:var(--signal);border-color:var(--signal);color:#fff}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--line)}
+
+/* Title block: the one signature element */
+.tb{display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--line);background:var(--surface)}
+.tb>div{padding:.65rem .9rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.tb>div:nth-child(4n){border-right:0}
+.tb>div:nth-last-child(-n+4){border-bottom:0}
+.tb small{display:block;color:var(--muted);font-size:.78rem;line-height:1.3}
+.tb b{font-weight:600;overflow-wrap:anywhere}
+.tb .wide{grid-column:span 2}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.skills h3{font-size:1.1rem;margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:2px solid var(--dim)}
+.skills ul{list-style:none;margin:0;padding:0}
+.skills li{padding:.2rem 0;display:flex;justify-content:space-between;gap:1rem}
+.skills li span{color:var(--muted);font-size:.9rem}
+
+/* Project sheets */
+.sheet{background:var(--surface);border:2px solid var(--line);margin-bottom:2.5rem}
+.sheet-body{display:grid;grid-template-columns:1.1fr 1fr}
+.fig{min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem;color:var(--muted);
+  border-right:1px solid var(--line);
+  background:repeating-linear-gradient(0deg,transparent 0 23px,var(--soft) 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,var(--soft) 23px 24px)}
+.fig span{background:var(--surface);padding:.4rem .7rem;border:1px dashed var(--muted)}
+.sheet-text{padding:1.5rem}
+.sheet-text h3{font-size:1.6rem;margin-bottom:.6rem}
+.sheet-text p{margin:0 0 .9rem}
+.sheet-tb{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--line)}
+.sheet-tb>div{padding:.6rem .9rem;border-right:1px solid var(--line);min-width:0}
+.sheet-tb>div:last-child{border-right:0}
+.sheet-tb small{display:block;color:var(--muted);font-size:.78rem}
+.sheet-tb b{font-weight:600;overflow-wrap:anywhere}
+.result{color:var(--signal)}
+
+/* Timeline */
+.tl{list-style:none;margin:0;padding:0 0 0 1.5rem;border-left:2px solid var(--dim)}
+.tl li{position:relative;padding:0 0 1.75rem 1rem}
+.tl li::before{content:"";position:absolute;left:-1.5rem;top:.55rem;width:.8rem;height:.8rem;background:var(--paper);border:3px solid var(--dim);border-radius:50%;transform:translateX(-45%)}
+.tl h3{font-size:1.15rem}
+.tl .when{color:var(--muted);font-size:.9rem}
+.tl p{margin:.3rem 0 0}
+
+footer{padding:2rem 0 3rem;border-top:1px solid var(--soft);color:var(--muted);font-size:.9rem}
+.contact a{font-size:1.25rem;font-weight:600}
+
+@media (max-width:760px){
+  .tb,.sheet-tb{grid-template-columns:1fr 1fr}
+  .tb>div,.sheet-tb>div{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+  .tb>div:nth-child(2n),.sheet-tb>div:nth-child(2n){border-right:0!important}
+  .sheet-body{grid-template-columns:1fr}
+  .fig{border-right:0;border-bottom:1px solid var(--line);min-height:200px}
+  nav a{margin:0 1rem 0 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none;box-shadow:none}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <strong>Your Name</strong>
+  <nav aria-label="Main">
+    <a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero"><div class="wrap">
+  <h1>I design [what you design].</h1>
+  <p class="pitch">[One sentence: your discipline, your level, and what you are looking for. E.g. "Mechanical engineering student specialising in lightweight structures, looking for a 6-month internship from March."]</p>
+  <div class="btns">
+    <a class="btn primary" href="#projects">See my projects</a>
+    <a class="btn" href="cv.pdf">Download CV (PDF)</a>
+  </div>
+
+  <div class="tb" role="table" aria-label="Summary">
+    <div class="wide"><small>Name</small><b>Your Name</b></div>
+    <div><small>Discipline</small><b>[Mechanical / Electrical / ...]</b></div>
+    <div><small>Level</small><b>[Year, degree]</b></div>
+    <div class="wide"><small>School</small><b>[School, city]</b></div>
+    <div><small>Available</small><b>[Month Year]</b></div>
+    <div><small>Languages</small><b>[FR, EN, ...]</b></div>
+  </div>
+</div></section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="lede">Three to five projects beat ten. For each one, show the problem, what you personally did, and a measurable result.</p>
+
+  <!-- Copy this whole <article> block for each project -->
+  <article class="sheet">
+    <div class="sheet-body">
+      <div class="fig"><span>Fig. 1 – Replace with a CAD render, photo or schematic</span></div>
+      <div class="sheet-text">
+        <h3>[Project title]</h3>
+        <p><b>Problem.</b> [What needed solving, and under which constraints: budget, mass, standard, deadline.]</p>
+        <p><b>Approach.</b> [Key design choices, calculations, simulations or tests, and why you made them.]</p>
+        <p><b>Result.</b> <span class="result">[A number: -18% mass, 2× lifetime, passed test X, ranked 3rd of 40.]</span></p>
+        <p><a href="#">Read the full report →</a></p>
+      </div>
+    </div>
+    <div class="sheet-tb">
+      <div><small>Role</small><b>[Your role]</b></div>
+      <div><small>Team / duration</small><b>[5 people, 4 months]</b></div>
+      <div><small>Tools</small><b>[SolidWorks, Ansys, Python]</b></div>
+      <div><small>Year</small><b>[2026]</b></div>
+    </div>
+  </article>
+
+  <article class="sheet">
+    <div class="sheet-body">
+      <div class="fig"><span>Fig. 2 – Second project visual</span></div>
+      <div class="sheet-text">
+        <h3>[Project title]</h3>
+        <p><b>Problem.</b> […]</p>
+        <p><b>Approach.</b> […]</p>
+        <p><b>Result.</b> <span class="result">[…]</span></p>
+        <p><a href="#">Read the full report →</a></p>
+      </div>
+    </div>
+    <div class="sheet-tb">
+      <div><small>Role</small><b>[…]</b></div>
+      <div><small>Team / duration</small><b>[…]</b></div>
+      <div><small>Tools</small><b>[…]</b></div>
+      <div><small>Year</small><b>[…]</b></div>
+    </div>
+  </article>
+</div></section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <p class="lede">Group by what you can do, and tag each with where you used it.</p>
+  <div class="skills">
+    <div><h3>Design &amp; CAD</h3><ul>
+      <li>[SolidWorks] <span>[Project A]</span></li>
+      <li>[CATIA] <span>[Course]</span></li>
+      <li>[GD&amp;T / technical drawing] <span>[Project B]</span></li></ul></div>
+    <div><h3>Analysis &amp; simulation</h3><ul>
+      <li>[FEA, Ansys] <span>[Project A]</span></li>
+      <li>[CFD] <span>[Internship]</span></li>
+      <li>[MATLAB / Python] <span>[Project C]</span></li></ul></div>
+    <div><h3>Manufacturing &amp; testing</h3><ul>
+      <li>[Machining, 3D printing] <span>[Workshop]</span></li>
+      <li>[Instrumentation, DAQ] <span>[Lab]</span></li>
+      <li>[Standards: NF EN …] <span>[Project D]</span></li></ul></div>
+    <div><h3>Working methods</h3><ul>
+      <li>[Project management] <span>[Student team]</span></li>
+      <li>[Technical writing] <span>[Reports]</span></li>
+      <li>[Languages] <span>[Levels]</span></li></ul></div>
+  </div>
+</div></section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience"><div class="wrap">
+  <h2>Experience &amp; education</h2>
+  <p class="lede">Most recent first. One line on what you delivered, not just what you were assigned.</p>
+  <ul class="tl">
+    <li><h3>[Role] – [Company or team]</h3><div class="when">[Month Year – Month Year]</div><p>[What you delivered, with a number if possible.]</p></li>
+    <li><h3>[Student team or association]</h3><div class="when">[Dates]</div><p>[Your responsibility and outcome.]</p></li>
+    <li><h3>[Degree] – [School]</h3><div class="when">[Dates]</div><p>[Specialisation, notable courses, ranking if relevant.]</p></li>
+  </ul>
+</div></section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact"><div class="wrap contact">
+  <h2>Contact</h2>
+  <p class="lede">Say what you are looking for and when you are available.</p>
+  <p><a href="mailto:you@example.com">you@example.com</a></p>
+  <p><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a> · <a href="https://github.com/your-handle">GitHub</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Your Name. Built with plain HTML and CSS.</div></footer>
+</body>
+</html>

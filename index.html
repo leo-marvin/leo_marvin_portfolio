@@ -440,6 +440,39 @@
     .activity-card-meta { display: flex; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
     .activity-meta-item { font-size: 0.75rem; color: var(--text2); display: flex; align-items: center; gap: 0.3rem; }
     .activity-meta-item strong { color: var(--text); }
+    /* Simulation block (project modal) */
+    .sim-card { border: 1px solid rgba(245,166,35,0.25); border-radius: 14px; overflow: hidden; background: var(--bg2); }
+    .sim-preview { display: block; position: relative; text-decoration: none; }
+    .sim-preview img { width: 100%; display: block; aspect-ratio: 1400 / 637; object-fit: cover; transition: opacity 0.2s; }
+    .sim-preview:hover img { opacity: 0.85; }
+    .sim-play {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      background: var(--accent); color: #111; font-weight: 600; font-size: 0.9rem;
+      padding: 0.65rem 1.1rem; border-radius: 100px; white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45); transition: transform 0.2s;
+    }
+    .sim-preview:hover .sim-play { transform: translate(-50%, -50%) scale(1.05); }
+    .sim-body { padding: 1.1rem 1.2rem 1.2rem; display: grid; gap: 0.9rem; }
+    .sim-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .sim-stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 0.55rem 0.7rem; }
+    .sim-stat strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; color: var(--text); }
+    .sim-stat span { font-size: 0.75rem; color: var(--text2); line-height: 1.4; display: block; }
+    .sim-stat.bad strong { color: #ff7b7b; }
+    .sim-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+    .sim-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none;
+      background: var(--accent); color: #111; font-weight: 600; font-size: 0.85rem;
+      padding: 0.55rem 1rem; border-radius: 8px;
+    }
+    .sim-btn:hover { background: var(--accent2); }
+    .sim-note { font-size: 0.75rem; color: var(--text2); }
+    .project-sim-badge {
+      display: inline-flex; align-items: center; gap: 0.35rem; margin-bottom: 1rem;
+      font-size: 0.75rem; font-weight: 600; color: var(--accent);
+      background: var(--glow); border: 1px solid rgba(245,166,35,0.3);
+      padding: 0.25rem 0.65rem; border-radius: 100px;
+    }
+    @media (max-width: 600px) { .sim-stats { grid-template-columns: 1fr; } .sim-play { font-size: 0.8rem; } }
     /* Modal logo */
     .modal-logo-wrap { display: flex; justify-content: center; padding: 1.5rem 0 1rem; }
     .modal-logo-wrap img { max-height: 80px; max-width: 200px; object-fit: contain; }
@@ -847,6 +880,7 @@
             Led the AI module for ENSAM's entry in Dassault's 12th edition UAV competition.
             Built real-time obstacle detection & autonomous flight using YOLOv8 and ArduPilot.
           </p>
+          <span class="project-sim-badge">▶ Interactive 3D simulation inside</span>
           <div class="project-meta">
             <span class="project-meta-item">🏢 <strong>Dassault Aviation</strong></span>
             <span class="project-meta-item">👥 Team of <strong>12</strong></span>
@@ -1660,10 +1694,22 @@
           </ul>`
         }
       ],
+      simulation: {
+        title: '🛰️ Simplified version of the simulation built during the project',
+        link: 'simulation/index.html',
+        preview: 'sim_preview.jpg',
+        text: `<p>A lightweight Python version of the AirSim simulation our team started during the project. A model of our X500 quadcopter flies the competition's <strong>Test #6 autonomous mission</strong> (take-off, 10 s hold over a GPS point, square of waypoints, Return To Home, landing) while the obstacle-avoidance logic reacts to a tree, a lighting mast and an intruder drone. The 3D replay shows the flight, the onboard camera with its detection boxes and every AI decision.</p>`,
+        stats: [
+          ['Mission completed', 'AI on: lands back on the LZ after 145 s', ''],
+          ['≥ 2.9 m clearance', '2 detours around static obstacles, 1 stop to yield to the drone', ''],
+          ['Crash at 42 s', 'AI off: the drone flies the plan into the tree', 'bad'],
+        ],
+        note: 'Detections are generated from the simulated scene; the tracking and decision logic is the one from the project.'
+      },
       gallery: ['uav1.jpg', 'uav2.jpg'],
       images: ['Dassault_software1.png', 'Dassault_software2.png'],
       video: 'Dassault_software3.mov',
-      chips: ['Python', 'YOLOv8n', 'OpenCV', 'Optical Flow', 'ArduPilot', 'SITL', 'PID Control', '3D Printing', 'Carbon PLA']
+      chips: ['Python', 'YOLOv8n', 'OpenCV', 'Optical Flow', 'ArduPilot', 'SITL', 'PID Control', 'Flight Simulation', 'Three.js', '3D Printing', 'Carbon PLA']
     },
     prosthesis: {
       domain: 'Biomechanics',
@@ -2166,6 +2212,24 @@
          ${p.images ? `<div class="modal-gallery" style="margin-bottom:1rem">${p.images.map(img => `<img src="${img}" alt="software screenshot" loading="lazy" />`).join('')}</div>` : ''}
          ${p.video ? `<video controls style="width:100%;border-radius:10px;margin-top:0.5rem;background:#000" preload="metadata"><source src="${p.video}"><p style="font-size:0.82rem;color:var(--text2);padding:1rem">Votre navigateur ne supporte pas la lecture vidéo.</p></video>` : ''}`
       : '';
+    const sim = p.simulation;
+    const simulationHtml = sim
+      ? `<div class="modal-section-title">${sim.title}</div>
+         <div class="sim-card">
+           <a class="sim-preview" href="${sim.link}" target="_blank" rel="noopener">
+             <img src="${sim.preview}" alt="3D replay of the drone simulation: the drone approaches a tree and the onboard camera flags it" loading="lazy" />
+             <span class="sim-play">▶ Launch the 3D simulation</span>
+           </a>
+           <div class="sim-body">
+             <div class="modal-body-text">${sim.text}</div>
+             <div class="sim-stats">${sim.stats.map(([k, v, cls]) => `<div class="sim-stat ${cls}"><strong>${k}</strong><span>${v}</span></div>`).join('')}</div>
+             <div class="sim-actions">
+               <a class="sim-btn" href="${sim.link}" target="_blank" rel="noopener">Open the simulation ↗</a>
+               <span class="sim-note">${sim.note}</span>
+             </div>
+           </div>
+         </div>`
+      : '';
     let sectionsHtml = p.sections.map(s => `
       <div class="modal-section-title">${s.title}</div>
       <div class="modal-body-text">${s.body}</div>
@@ -2179,6 +2243,7 @@
       </table>
       <div class="modal-body-text">${p.description}</div>
       ${sectionsHtml}
+      ${simulationHtml}
       ${softwareMediaHtml}
       ${galleryHtml}
       <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem">
