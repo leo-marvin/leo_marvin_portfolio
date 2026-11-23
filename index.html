@@ -461,8 +461,8 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
       </article>
       <article class="dossier">
         <div class="d-head"><b>PRJ-02</b><span>Product design · Sep 2026 – ongoing</span></div>
-        
-        <div class="d-body"><h3>BerSac, product development with Pilion</h3><dl class="d-spec"><dt>Context</dt><dd>Partnership with Pilion, a construction start-up incubated at Arts et Métiers.</dd><dt>Problem</dt><dd>Develop BerSac, a new product built around Pilion&#x27;s needs, up to a working prototype.</dd><dt>Role</dt><dd>Head of the student team.</dd><dt>Result</dt><dd>In progress: benchmark, prototype sizing study and CAD model under way.</dd></dl><ul class="tags" aria-label="Tools"><li>Benchmark</li><li>Sizing study</li><li>CAD</li><li>Prototyping</li></ul></div>
+        <figure class="d-fig"><img src="thumbs/card_pilion.jpg" alt="BerSac, product development with Pilion: project photos" loading="lazy"></figure>
+        <div class="d-body"><h3>BerSac, product development with Pilion</h3><dl class="d-spec"><dt>Context</dt><dd>Partnership with Pilion, a construction start-up incubated at Arts et Métiers.</dd><dt>Problem</dt><dd>Develop BerSac, a new product built around Pilion&#x27;s needs, up to a working prototype.</dd><dt>Role</dt><dd>Head of the student team.</dd><dt>Result</dt><dd>Preliminary CAD of the prototype completed; benchmark and sizing study under way.</dd></dl><ul class="tags" aria-label="Tools"><li>Benchmark</li><li>Sizing study</li><li>CAD</li><li>Prototyping</li></ul></div>
         <div class="d-foot"><button class="d-open" data-open="pilion">Open dossier <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button></div>
       </article>
       <article class="dossier">
@@ -1337,7 +1337,8 @@ projects.pilion = {
   ],
   description: `<p>Pilion is a start-up incubated at Arts et Métiers that works in construction. I head the team of students recruited for one of its projects: developing <strong>BerSac</strong>, a new product built around Pilion’s needs.</p>`,
   sections: [
-    { title: 'What I am responsible for', body: `<ul><li>Developing BerSac from Pilion’s requirements</li><li>Carrying out a benchmark of existing solutions</li><li>Running a sizing study for a functional prototype</li><li>Building the CAD model of the prototype</li><li>Designing and making a working prototype</li></ul>` }
+    { title: 'What I am responsible for', body: `<ul><li>Developing BerSac from Pilion’s requirements</li><li>Carrying out a benchmark of existing solutions</li><li>Running a sizing study for a functional prototype</li><li>Building the CAD model of the prototype</li><li>Designing and making a working prototype</li></ul>` },
+    { title: 'Preliminary CAD', body: `<figure style="margin:0"><a href="bersac_cad.jpg" target="_blank" rel="noopener"><img src="bersac_cad.jpg" alt="Preliminary CAD render of the BerSac prototype" style="width:100%;max-width:720px;border:1px solid var(--rule-strong)" loading="lazy"></a><figcaption style="font:400 12px var(--mono);color:var(--ink-3);margin-top:8px">Preliminary CAD of the prototype, by the student team</figcaption></figure>` }
   ],
   chips: ['Product development', 'Benchmark', 'Sizing study', 'CAD', 'Prototyping', 'Team leadership']
 };
