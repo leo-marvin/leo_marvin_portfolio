@@ -399,7 +399,7 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
       <div>
         <p class="eyebrow">Open to opportunities</p>
         <h1 id="home-title">Leo Marvin</h1>
-        <p class="title-line">Mechanical Engineering Student <span>·</span> Arts et Métiers (ENSAM), Châlons-en-Champagne</p>
+        <p class="title-line">Mechanical Engineering Student <span>·</span> Arts et Métiers (ENSAM), Châlons-en-Champagne and Paris</p>
         <p class="hook">Engineering with intention: driven by curiosity, built on rigour. I bridge <strong>hands-on manufacturing</strong>, <strong>AI development</strong> and <strong>applied research</strong>.</p>
         <div class="cta">
           <a class="btn btn-solid" href="#projects">View my projects <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
@@ -424,50 +424,56 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
     <header class="view-head">
       <p class="eyebrow">02 / Projects</p>
       <h2 id="projects-title">Engineering projects</h2>
-      <p>From an AI-guided drone to a 10.5 kW gearbox: what each project set out to solve, what I did and how it turned out. Open a dossier for the full details, images and reports.</p>
-      <div class="dim" aria-hidden="true"><i>7 projects</i></div>
+      <p>From an AI-guided drone to a 10.5 kW gearbox and a start-up product: what each project set out to solve, what I did and how it turned out. Open a dossier for the full details, images and reports.</p>
+      <div class="dim" aria-hidden="true"><i>8 projects</i></div>
     </header>
 
     <div class="dossiers">
       <article class="dossier featured">
-        <div class="d-head"><b>PRJ-01</b><span>Aeronautics · Sep 2025 – Jan 2026</span></div>
+        <div class="d-head"><b>PRJ-01</b><span>Aeronautics · Sep 2025 – May 2026</span></div>
         <figure class="d-fig"><img src="uav1.jpg" class="collage" alt="Dassault UAV Challenge: project photos" loading="lazy"></figure>
-        <div class="d-body"><h3>Dassault UAV Challenge</h3><dl class="d-spec"><dt>Context</dt><dd>Dassault Aviation&#x27;s 12th UAV Challenge; ENSAM team of 12.</dd><dt>Problem</dt><dd>Build a competition-ready drone from scratch, with autonomous GPS waypoint navigation and real-time obstacle avoidance.</dd><dt>Role</dt><dd>Co-head of the project and head of artificial intelligence.</dd><dt>Result</dt><dd>Two AI modules (detection, danger assessment) validated on a live video stream; carbon-reinforced PLA chosen for the arms after a beam-theory study.</dd></dl><ul class="tags" aria-label="Tools"><li>Python</li><li>YOLOv8n</li><li>OpenCV</li><li>ArduPilot</li><li>SITL</li><li>PID</li><li>3D printing</li></ul></div>
+        <div class="d-body"><h3>Dassault UAV Challenge</h3><dl class="d-spec"><dt>Context</dt><dd>Dassault Aviation&#x27;s 12th UAV Challenge, representing Arts et Métiers.</dd><dt>Problem</dt><dd>Build a competition-ready drone from scratch, with autonomous GPS waypoint navigation and real-time obstacle avoidance.</dd><dt>Role</dt><dd>Head of the 12-member Gadz&#x27;Air team, coordinating four sub-groups; wrote the AI video-processing code.</dd><dt>Result</dt><dd>A working drone and two AI modules (object detection, crash prevention). The team did not qualify after the second round.</dd></dl><ul class="tags" aria-label="Tools"><li>Python</li><li>YOLOv8n</li><li>OpenCV</li><li>ArduPilot</li><li>SITL</li><li>PID</li><li>3D printing</li></ul></div>
         <div class="d-foot"><button class="d-open" data-open="uav">Open dossier <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button><a class="d-link" href="simulation/index.html" target="_blank" rel="noopener">3D simulation ↗</a><a class="d-link" href="uav_report_english.pdf" target="_blank" rel="noopener">Report (PDF) ↗</a></div>
       </article>
       <article class="dossier">
-        <div class="d-head"><b>PRJ-02</b><span>Mechanical design · Sep 2025 – Jan 2026</span></div>
+        <div class="d-head"><b>PRJ-02</b><span>Product design · Sep 2026 – ongoing</span></div>
+        
+        <div class="d-body"><h3>BerSac, product development with Pilion</h3><dl class="d-spec"><dt>Context</dt><dd>Partnership with Pilion, a construction start-up incubated at Arts et Métiers.</dd><dt>Problem</dt><dd>Develop BerSac, a new product built around Pilion&#x27;s needs, up to a working prototype.</dd><dt>Role</dt><dd>Head of the student team.</dd><dt>Result</dt><dd>In progress: benchmark, prototype sizing study and CAD model under way.</dd></dl><ul class="tags" aria-label="Tools"><li>Benchmark</li><li>Sizing study</li><li>CAD</li><li>Prototyping</li></ul></div>
+        <div class="d-foot"><button class="d-open" data-open="pilion">Open dossier <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button></div>
+      </article>
+      <article class="dossier">
+        <div class="d-head"><b>PRJ-03</b><span>Mechanical design · Sep 2025 – Jan 2026</span></div>
         <figure class="d-fig"><img src="thumbs/card_gearbox.jpg" alt="Industrial gearbox design: project photos" loading="lazy"></figure>
         <div class="d-body"><h3>Industrial gearbox design</h3><dl class="d-spec"><dt>Context</dt><dd>ENSAM preliminary design project; team of 5.</dd><dt>Problem</dt><dd>Design a 10.5 kW gearbox with a 4:1 ratio for food-industry conveyor belts.</dd><dt>Role</dt><dd>Team member across the full pre-design cycle.</dd><dt>Result</dt><dd>Complete preliminary design report delivered on time, with two viable assembly architectures.</dd></dl><ul class="tags" aria-label="Tools"><li>FAST</li><li>Hertz</li><li>Tresca</li><li>ISO 281</li><li>Ashby charts</li></ul></div>
         <div class="d-foot"><button class="d-open" data-open="gearbox">Open dossier <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button><a class="d-link" href="gearbox_report.pdf" target="_blank" rel="noopener">Report (PDF) ↗</a></div>
       </article>
       <article class="dossier">
-        <div class="d-head"><b>PRJ-03</b><span>Manufacturing · Nov 2025 – Jan 2026</span></div>
+        <div class="d-head"><b>PRJ-04</b><span>Manufacturing · Nov 2025 – Jan 2026</span></div>
         <figure class="d-fig"><img src="thumbs/card_mfg.jpg" alt="Industrial manufacturing project: project photos" loading="lazy"></figure>
         <div class="d-body"><h3>Industrial manufacturing project</h3><dl class="d-spec"><dt>Context</dt><dd>ENSAM production project; team of 3.</dd><dt>Problem</dt><dd>Take an industrial part from raw casting to a finished, inspected component.</dd><dt>Role</dt><dd>Foundry, CNC machining and metrology, in rotation with the team.</dd><dt>Result</dt><dd>Part machined to its final geometry and inspected on a CMM against its specification.</dd></dl><ul class="tags" aria-label="Tools"><li>Foundry</li><li>CNC</li><li>Process planning</li><li>GD&amp;T</li><li>CMM</li></ul></div>
         <div class="d-foot"><button class="d-open" data-open="manufacturing">Open dossier <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button><a class="d-link" href="industrial_project_report.pdf" target="_blank" rel="noopener">Report (PDF) ↗</a></div>
       </article>
       <article class="dossier">
-        <div class="d-head"><b>PRJ-04</b><span>Embedded systems · May 2026</span></div>
+        <div class="d-head"><b>PRJ-05</b><span>Embedded systems · May 2026</span></div>
         <figure class="d-fig"><img src="thumbs/card_car.jpg" alt="Autonomous smart car: project photos" loading="lazy"></figure>
-        <div class="d-body"><h3>Autonomous smart car</h3><dl class="d-spec"><dt>Context</dt><dd>Solo project.</dd><dt>Problem</dt><dd>Make a miniature car drive itself on a single-board computer: vision, sensing and motor control.</dd><dt>Role</dt><dd>Designer and developer.</dd><dt>Result</dt><dd>Working prototype that reads its environment in real time and makes its own driving decisions.</dd></dl><ul class="tags" aria-label="Tools"><li>Python</li><li>Raspberry Pi</li><li>OpenCV</li><li>PWM</li><li>L298N</li><li>HC-SR04</li></ul></div>
+        <div class="d-body"><h3>Autonomous smart car</h3><dl class="d-spec"><dt>Context</dt><dd>Arts et Métiers extra-credit project, sensors course; solo.</dd><dt>Problem</dt><dd>Make a miniature car drive itself on a single-board computer: vision, sensing and motor control.</dd><dt>Role</dt><dd>Designer and developer.</dd><dt>Result</dt><dd>Working prototype that processes two video feeds at once and makes its own driving decisions; built to test the impact of each parameter.</dd></dl><ul class="tags" aria-label="Tools"><li>Python</li><li>Raspberry Pi</li><li>OpenCV</li><li>PWM</li><li>L298N</li><li>HC-SR04</li></ul></div>
         <div class="d-foot"><button class="d-open" data-open="autonomouscar">Open dossier <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button><a class="d-link" href="autonomous_car_english_report.pdf" target="_blank" rel="noopener">Report (PDF) ↗</a></div>
       </article>
       <article class="dossier">
-        <div class="d-head"><b>PRJ-05</b><span>Research · Dec 2024 – Jul 2025</span></div>
+        <div class="d-head"><b>PRJ-06</b><span>Research · 2023 – 2025</span></div>
         <figure class="d-fig"><img src="thumbs/card_eddy.jpg" alt="Eddy-current braking research: project photos" loading="lazy"></figure>
-        <div class="d-body"><h3>Eddy-current braking research</h3><dl class="d-spec"><dt>Context</dt><dd>Research project during classe préparatoire.</dd><dt>Problem</dt><dd>Identify the parameters (disc geometry, magnetic field) that drive the performance of an eddy-current retarder for lorries.</dd><dt>Role</dt><dd>Designed the experimental method and built the physical model.</dd><dt>Result</dt><dd>A working braking system relying only on eddy currents, documented in a full research report.</dd></dl><ul class="tags" aria-label="Tools"><li>Electromagnetism</li><li>Experimental design</li><li>Data analysis</li></ul></div>
+        <div class="d-body"><h3>Eddy-current braking research</h3><dl class="d-spec"><dt>Context</dt><dd>Two-year research project during classe préparatoire.</dd><dt>Problem</dt><dd>Find how the choice of material and disc geometry affects eddy-current braking, for a retarder on lorries.</dd><dt>Role</dt><dd>Built the test rig to compare steel discs of different grades and geometries; wrote the theoretical model and a Python simulation.</dd><dt>Result</dt><dd>A working eddy-current braking system; presented to a jury and awarded an A+.</dd></dl><ul class="tags" aria-label="Tools"><li>Electromagnetism</li><li>Experimental design</li><li>Data analysis</li></ul></div>
         <div class="d-foot"><button class="d-open" data-open="eddy">Open dossier <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button><a class="d-link" href="Presentation_TIPE_V3_EN.pdf" target="_blank" rel="noopener">Presentation (PDF) ↗</a></div>
       </article>
       <article class="dossier">
-        <div class="d-head"><b>PRJ-06</b><span>Biomechanics · Sep 2026 – ongoing</span></div>
+        <div class="d-head"><b>PRJ-07</b><span>Biomechanics · Sep 2026 – ongoing</span></div>
         <figure class="d-fig"><img src="thumbs/card_prosthesis.jpg" alt="Shoulder prosthesis loosening study: project photos" loading="lazy"></figure>
         <div class="d-body"><h3>Shoulder prosthesis loosening study</h3><dl class="d-spec"><dt>Context</dt><dd>ENSAM research project, ongoing.</dd><dt>Problem</dt><dd>Understand the mechanical conditions that make shoulder implants loosen over time.</dd><dt>Result</dt><dd>In progress: quantify stress and micromotion at the bone–implant interface and validate the FEM model against tests.</dd></dl><ul class="tags" aria-label="Tools"><li>Anglin rocking-horse test</li><li>FEM</li><li>CATIA</li></ul></div>
         <div class="d-foot"><button class="d-open" data-open="prosthesis">Open dossier <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button></div>
       </article>
       <article class="dossier">
-        <div class="d-head"><b>PRJ-07</b><span>Software · Jul 2026</span></div>
-        <div class="d-fig blank" aria-hidden="true">no photo</div>
+        <div class="d-head"><b>PRJ-08</b><span>Software · Jul 2026</span></div>
+        
         <div class="d-body"><h3>LLM-powered web chatbot</h3><dl class="d-spec"><dt>Context</dt><dd>Personal project, solo.</dd><dt>Problem</dt><dd>Build a working chatbot end to end and understand how LLM-based systems work.</dd><dt>Role</dt><dd>Sole developer.</dd><dt>Result</dt><dd>Web app with streamed answers, live model settings and saved conversations.</dd></dl><ul class="tags" aria-label="Tools"><li>Python</li><li>Streamlit</li><li>Gemini API</li></ul></div>
         <div class="d-foot"><button class="d-open" data-open="chatbot">Open dossier <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M1 6h20M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button><a class="d-link" href="Chatbot%20Project%20report%20English.pdf" target="_blank" rel="noopener">Report (PDF) ↗</a></div>
       </article>
@@ -478,13 +484,13 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
       <ul class="doc-list">
         <li><a href="uav_report_english.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-01</span><span class="doc-title">Dassault UAV Challenge, mid-project report<small>AI architecture, mechanical design choices, autonomous flight stack</small></span><span class="doc-type">PDF · EN · 28 p. ↗</span></a></li>
         <li><a href="Rapport - Projet Gadz&#x27;air - ENSAM.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-01</span><span class="doc-title">Drone Dassault, rapport de mi-projet<small>French version of the mid-project report</small></span><span class="doc-type">PDF · FR ↗</span></a></li>
-        <li><a href="gearbox_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-02</span><span class="doc-title">Industrial gearbox design report<small>Preliminary design, sizing and drawings</small></span><span class="doc-type">PDF · FR · 47 p. ↗</span></a></li>
-        <li><a href="industrial_project_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-03</span><span class="doc-title">Industrial project report<small>Foundry, CNC machining and CMM metrology</small></span><span class="doc-type">PDF · EN ↗</span></a></li>
-        <li><a href="autonomous_car_english_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-04</span><span class="doc-title">Autonomous smart car, technical report<small>Hardware architecture, vision pipeline, motor control</small></span><span class="doc-type">PDF · EN ↗</span></a></li>
-        <li><a href="autonomous_car_french_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-04</span><span class="doc-title">Voiture autonome, rapport technique<small>French version of the technical report</small></span><span class="doc-type">PDF · FR ↗</span></a></li>
-        <li><a href="Presentation_TIPE_V3_EN.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-05</span><span class="doc-title">Eddy-current braking, research presentation<small>Experimental setup, method and results, 38 slides</small></span><span class="doc-type">PDF · EN ↗</span></a></li>
-        <li><a href="eddy_current_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-05</span><span class="doc-title">Freinage par courants de Foucault, présentation<small>French version, 38 slides</small></span><span class="doc-type">PDF · FR ↗</span></a></li>
-        <li><a href="Chatbot%20Project%20report%20English.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-07</span><span class="doc-title">LLM-powered chatbot, project report<small>Stack, features and key concepts</small></span><span class="doc-type">PDF · EN ↗</span></a></li>
+        <li><a href="gearbox_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-03</span><span class="doc-title">Industrial gearbox design report<small>Preliminary design, sizing and drawings</small></span><span class="doc-type">PDF · FR · 47 p. ↗</span></a></li>
+        <li><a href="industrial_project_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-04</span><span class="doc-title">Industrial project report<small>Foundry, CNC machining and CMM metrology</small></span><span class="doc-type">PDF · EN ↗</span></a></li>
+        <li><a href="autonomous_car_english_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-05</span><span class="doc-title">Autonomous smart car, technical report<small>Hardware architecture, vision pipeline, motor control</small></span><span class="doc-type">PDF · EN ↗</span></a></li>
+        <li><a href="autonomous_car_french_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-05</span><span class="doc-title">Voiture autonome, rapport technique<small>French version of the technical report</small></span><span class="doc-type">PDF · FR ↗</span></a></li>
+        <li><a href="Presentation_TIPE_V3_EN.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-06</span><span class="doc-title">Eddy-current braking, research presentation<small>Experimental setup, method and results, 38 slides</small></span><span class="doc-type">PDF · EN ↗</span></a></li>
+        <li><a href="eddy_current_report.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-06</span><span class="doc-title">Freinage par courants de Foucault, présentation<small>French version, 38 slides</small></span><span class="doc-type">PDF · FR ↗</span></a></li>
+        <li><a href="Chatbot%20Project%20report%20English.pdf" target="_blank" rel="noopener"><span class="doc-ref">PRJ-08</span><span class="doc-title">LLM-powered chatbot, project report<small>Stack, features and key concepts</small></span><span class="doc-type">PDF · EN ↗</span></a></li>
       </ul>
     </div>
   </section>
@@ -498,22 +504,22 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
     </header>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm a <strong>Franco-British mechanical engineering student</strong> at Arts et Métiers, shaped by an international upbringing and a bilingual school education. My experience is hands-on: industrial design, product development and manufacturing, with a growing interest in technical consulting.</p>
-        <p>In a team, I'm the person who brings structure and keeps the project on track, and who keeps pushing on a hard problem until it is solved. On the Dassault UAV Challenge that meant coordinating the AI, mechanics and software subgroups of a 12-person team.</p>
+        <p>I'm a <strong>Franco-British mechanical engineering student</strong> at Arts et Métiers (ENSAM), France's leading engineering school for manufacturing and mechanics. My training combines workshop experience with technical project leadership, from an AI-guided drone for Dassault's UAV Challenge to a new product for a start-up incubated at the school.</p>
+        <p>In a team, I'm the person who brings structure and keeps the project on track, and who keeps pushing on a hard problem until it is solved. On the Dassault UAV Challenge that meant leading a 12-person team and coordinating its four sub-groups: motors, fuselage, battery and information processing.</p>
         <p>My daily tools are <strong>3D modelling</strong> (3DExperience and SolidWorks), <strong>project management</strong> and <strong>Python</strong> for data analysis and process automation. They let me work on the engineering itself and explain it to the business side.</p>
         <div class="figures">
-          <div><b>4+</b><span>Engineering projects</span></div>
-          <div><b>3</b><span>Languages</span></div>
-          <div><b>ENSAM</b><span>Grande École</span></div>
+          <div><b>3.70</b><span>GPA at ENSAM</span></div>
+          <div><b>110</b><span>TOEFL iBT / 120</span></div>
+          <div><b>Top 10%</b><span>Prépa ranking</span></div>
           <div><b>2028</b><span>Graduating</span></div>
         </div>
       </div>
       <div>
         <ol class="notes">
           <li><h3>Detail-oriented</h3><p>A proactive learner who adapts quickly to new tools and technologies, in engineering and business alike.</p></li>
-          <li><h3>Team driver</h3><p>Led a 12-person multidisciplinary team at the Dassault UAV Challenge.</p></li>
-          <li><h3>Research-minded</h3><p>Designed and built an original electromagnetic braking system from scratch, applying a scientific method from start to finish.</p></li>
-          <li><h3>International</h3><p>Fluent in French and English; educated in an international bilingual school, with exposure to several academic systems.</p></li>
+          <li><h3>Team driver</h3><p>Led the 12-person Gadz’Air team at the Dassault UAV Challenge; now heading the student team developing BerSac with Pilion.</p></li>
+          <li><h3>Research-minded</h3><p>Spent two years on an eddy-current braking research project: test rig, theoretical model and Python simulation, awarded an A+ by the jury.</p></li>
+          <li><h3>International</h3><p>Native in French and English (C2, TOEFL 110/120), with working German and basic Chinese; educated in an international bilingual school.</p></li>
         </ol>
       </div>
     </div>
@@ -521,24 +527,25 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
       <div>
         <h3>Community and charity</h3>
         <ul>
-          <li><button data-open="restos"><b>Les Restos du Cœur</b><span>Weekly food distribution, up to 200 families a week · since 2023</span></button></li>
-          <li><button data-open="gazole"><b>Gazole, Gadz'Arts Solidaire</b><span>Secretary of the ENSAM solidarity association · since 2025</span></button></li>
-          <li><button data-open="cordes"><b>Cordées de la Réussite</b><span>Mentoring high-school pupils, campus visits and demos · since 2025</span></button></li>
+          <li><button data-open="restos"><b>Les Restos du Cœur</b><span>Food for 50 families every week, Rambouillet · since 2021</span></button></li>
+          <li><button data-open="gazole"><b>Gazole, Gadz'Arts Solidaire</b><span>Secretary: 5 blood drives, school partnership, tutoring for 30 children a session · since 2026</span></button></li>
+          <li><button data-open="unass"><b>UNASS first aid</b><span>First-aid stations at events of up to 3,000 people · since 2026</span></button></li>
+          <li><button data-open="cordes"><b>Cordées de la Réussite</b><span>Science workshops for 40 pupils · 2025 – 2026</span></button></li>
         </ul>
       </div>
       <div>
         <h3>Engineering outside class</h3>
         <ul>
-          <li><button data-open="regattarts"><b>Regatt'Arts, Monaco Energy Boat Challenge</b><span>Head of Sponsoring, €30,000 raised · since 2026</span></button></li>
+          <li><button data-open="regattarts"><b>Regatt'Arts, Monaco Energy Boat Challenge</b><span>Head of Sponsoring, around €25,000 to raise · since May 2026</span></button></li>
           <li><button data-open="chatbot"><b>LLM-powered web chatbot</b><span>Personal project in Python, Streamlit and Gemini · 2026</span></button></li>
         </ul>
       </div>
       <div>
         <h3>Interests</h3>
         <ul>
-          <li><button data-open="piano"><b>Piano</b><span>Six years of lessons, classical repertoire</span></button></li>
+          <li><button data-open="piano"><b>Piano</b><span>Five years of lessons, self-taught since</span></button></li>
           <li><button data-open="reading"><b>Reading</b><span>History, popular science, detective fiction</span></button></li>
-          <li><button data-open="running"><b>Running and cycling</b><span>Long-distance running, road cycling</span></button></li>
+          <li><button data-open="running"><b>Running and cycling</b><span>Three official 10K races, preparing a half-marathon</span></button></li>
           <li><button data-open="frenchboxing"><b>French boxing (savate)</b><span>Technique, footwork and sparring</span></button></li>
         </ul>
       </div>
@@ -555,23 +562,23 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
     </header>
     <div class="skills">
       <div class="skill"><h3>Design &amp; CAD <span>A</span></h3><ul>
-        <li>3DExperience (CATIA)<small>PRJ-06</small></li><li>SolidWorks</li><li>Technical drawing<small>PRJ-02</small></li>
-        <li>Functional analysis (FAST)<small>PRJ-02</small></li><li>3D printing, carbon-reinforced PLA<small>PRJ-01</small></li></ul></div>
+        <li>3DExperience, CATIA V5<small>PRJ-07</small></li><li>SolidWorks, Fusion 360</li><li>Prototype CAD and sizing<small>PRJ-02</small></li><li>Technical drawing<small>PRJ-03</small></li>
+        <li>Functional analysis (FAST)<small>PRJ-03</small></li><li>3D printing, carbon-reinforced PLA<small>PRJ-01</small></li></ul></div>
       <div class="skill"><h3>Calculation &amp; analysis <span>B</span></h3><ul>
-        <li>Continuum mechanics</li><li>Thermodynamics</li><li>Electromagnetism<small>PRJ-05</small></li>
-        <li>Gear sizing (Hertz, tooth bending)<small>PRJ-02</small></li><li>Shafts (Tresca), bearings (ISO 281)<small>PRJ-02</small></li>
-        <li>Finite element analysis<small>PRJ-06</small></li><li>Beam theory, material selection (Ashby)<small>PRJ-01 · 02</small></li></ul></div>
+        <li>Continuum mechanics</li><li>Thermodynamics</li><li>Electromagnetism<small>PRJ-06</small></li>
+        <li>Gear sizing (Hertz, tooth bending)<small>PRJ-03</small></li><li>Shafts (Tresca), bearings (ISO 281)<small>PRJ-03</small></li>
+        <li>Finite element analysis<small>PRJ-07</small></li><li>Beam theory, material selection (Ashby)<small>PRJ-01 · 03</small></li></ul></div>
       <div class="skill"><h3>Programming &amp; AI <span>C</span></h3><ul>
-        <li>Python</li><li>Computer vision (OpenCV, YOLOv8)<small>PRJ-01 · 04</small></li><li>Data analysis</li>
-        <li>Raspberry Pi, GPIO, PWM<small>PRJ-04</small></li><li>ArduPilot, SITL simulation, PID tuning<small>PRJ-01</small></li><li>LLM APIs, Streamlit<small>PRJ-07</small></li></ul></div>
+        <li>Python, LaTeX, HTML</li><li>Computer vision (OpenCV, YOLOv8)<small>PRJ-01 · 05</small></li><li>Data analysis</li>
+        <li>Signal processing, two video feeds at once<small>PRJ-05</small></li><li>Raspberry Pi, GPIO, PWM<small>PRJ-05</small></li><li>ArduPilot, SITL simulation, PID tuning<small>PRJ-01</small></li><li>LLM APIs, Streamlit<small>PRJ-08</small></li></ul></div>
       <div class="skill"><h3>Manufacturing <span>D</span></h3><ul>
-        <li>Foundry &amp; casting<small>PRJ-03</small></li><li>CNC machining, process planning<small>PRJ-03</small></li>
-        <li>GD&amp;T, CMM metrology<small>PRJ-03</small></li><li>Quality control on a stamping line<small>Internship</small></li></ul></div>
+        <li>Foundry &amp; casting<small>PRJ-04</small></li><li>CNC machining, process planning<small>PRJ-04</small></li>
+        <li>GD&amp;T, CMM metrology<small>PRJ-04</small></li><li>Sorting and logistics, delays cut by 30%<small>Internship</small></li></ul></div>
       <div class="skill"><h3>Project management <span>E</span></h3><ul>
-        <li>Team leadership<small>PRJ-01</small></li><li>Product development</li><li>Task planning &amp; coordination</li>
-        <li>Sponsorship (€30,000 raised)<small>Regatt'Arts</small></li></ul></div>
+        <li>Team leadership<small>PRJ-01</small></li><li>Product development</li><li>Benchmarking<small>PRJ-02</small></li><li>Task planning &amp; coordination</li><li>Microsoft Office</li>
+        <li>Sponsorship and partner relations<small>Regatt'Arts</small></li></ul></div>
       <div class="skill"><h3>Languages <span>F</span></h3><ul>
-        <li>French<small>Native</small></li><li>English<small>Native / C2</small></li><li>German<small>Certified B1</small></li></ul></div>
+        <li>French<small>Native</small></li><li>English<small>Native · C2 · TOEFL 110</small></li><li>German<small>Intermediate</small></li><li>Chinese<small>Basics</small></li></ul></div>
     </div>
   </section>
 
@@ -584,25 +591,25 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
       <div class="dim" aria-hidden="true"><i>2020 → 2028</i></div>
     </header>
     <ol class="timeline">
-      <li class="t-item"><div class="t-when"><span>Experience</span>Jul – Aug 2026</div><div class="t-what">
+      <li class="t-item"><div class="t-when"><span>Experience</span>Jun – Aug 2026</div><div class="t-what">
         <h3>Shop floor internship, GRIS Découpage</h3><p class="t-where">Lesménils (54), France · ENSAM first-year « stage ouvrier »</p>
-        <ul><li>Operator on the sorting line of a metal-stamping supplier to the automotive industry</li><li>Automated and manual quality control of stamped parts, packing and traceability of batches</li></ul>
+        <ul><li>Part of the 6-person logistics team of a metal-stamping supplier to the automotive industry</li><li>Reduced average sorting delays by 30%</li></ul>
         <div class="t-links"><button data-open="stagegris">Internship details</button></div></div></li>
       <li class="t-item"><div class="t-when"><span>Education</span>2025 – 2028</div><div class="t-what">
-        <h3>École Nationale Supérieure d'Arts et Métiers (ENSAM)</h3><p class="t-where">Châlons-en-Champagne, France · mechanical engineering, graduating 2028</p>
-        <ul><li>Continuum mechanics, materials science, thermodynamics, machining and manufacturing</li><li>Projects: Dassault UAV Challenge, gearbox design, industrial manufacturing, shoulder prosthesis study</li></ul>
-        <div class="t-links"><button data-open="uav">UAV Challenge</button><button data-open="gearbox">Gearbox</button><button data-open="manufacturing">Manufacturing</button><button data-open="prosthesis">Prosthesis study</button></div></div></li>
+        <h3>École Nationale Supérieure d'Arts et Métiers (ENSAM)</h3><p class="t-where">Châlons-en-Champagne and Paris · three-year combined Bachelor and Master of Science · GPA 3.70</p>
+        <ul><li>Continuum mechanics, materials, thermodynamics and fluid mechanics, signal processing</li><li>Projects: Dassault UAV Challenge, BerSac with Pilion, gearbox design, industrial manufacturing, shoulder prosthesis study</li></ul>
+        <div class="t-links"><button data-open="uav">UAV Challenge</button><button data-open="pilion">BerSac</button><button data-open="gearbox">Gearbox</button><button data-open="manufacturing">Manufacturing</button><button data-open="prosthesis">Prosthesis study</button></div></div></li>
       <li class="t-item"><div class="t-when"><span>Experience</span>Jul – Aug 2025</div><div class="t-what">
         <h3>Seasonal market gardener, GAEC Chateau</h3><p class="t-where">Hermeray, France · summer job</p>
-        <ul><li>Crop maintenance, harvesting and market preparation through the peak season</li></ul>
+        <ul><li>Team of three maintaining 3 hectares of crops and preparing two markets a week</li></ul>
         <div class="t-links"><button data-open="maraicher">Details</button></div></div></li>
       <li class="t-item"><div class="t-when"><span>Education</span>2023 – 2025</div><div class="t-what">
         <h3>Classe préparatoire PTSI / PT★</h3><p class="t-where">Lycée Raspail, Paris</p>
-        <ul><li>Advanced mathematics, advanced physics, engineering sciences, technical drawing</li><li>Research project on eddy-current braking</li></ul>
+        <ul><li>Intensive mathematics, physics and engineering sciences · GPA 4.00</li><li>Ranked 288 out of 3,000 (top 10%)</li><li>Two-year research project on eddy-current braking, awarded an A+</li></ul>
         <div class="t-links"><button data-info="prepa">What is a classe préparatoire?</button><button data-open="eddy">Eddy-current research</button></div></div></li>
       <li class="t-item"><div class="t-when"><span>Education</span>2020 – 2023</div><div class="t-what">
-        <h3>Baccalauréat, Option Internationale</h3><p class="t-where">Lycée Franco-Allemand, Buc</p>
-        <ul><li>Mathematics with extra maths, physics and biology, English literature and history-geography (A-Level)</li><li>Model United Nations debate club and the GrandMUN international conference; half of classes taught in English</li></ul></div></li>
+        <h3>Baccalauréat Général, Option Internationale Britannique</h3><p class="t-where">Lycée Franco-Allemand, Buc · Advanced Mathematics and Physics</p>
+        <ul><li>Graduated with honours (top 20%); half of classes taught in English</li><li>English literature, history and geography; Model United Nations club, two conferences including GrandMUN</li></ul></div></li>
     </ol>
   </section>
 
@@ -656,9 +663,10 @@ const projects = {
       meta: [
         ['Company', 'GRIS Découpage (GRIS Group)'],
         ['Location', 'Lesménils, Meurthe-et-Moselle (54), France'],
-        ['Period', 'July – August 2026'],
+        ['Period', 'June – August 2026'],
         ['Domain', 'Metal stamping / Automotive supply chain'],
-        ['Position', 'Shop floor intern — sorting &amp; inspection department'],
+        ['Position', 'Shop floor intern — logistics team (6 people), sorting &amp; inspection'],
+        ['Result', 'Average sorting delays reduced by 30%'],
         ['Programme', 'ENSAM first-year &laquo; stage ouvrier &raquo;'],
       ],
       description: `
@@ -706,6 +714,7 @@ const projects = {
         ['Domain', 'Market gardening / Agriculture'],
         ['Position', 'Seasonal worker'],
         ['Type', 'Summer job'],
+        ['Team', '3 people · 3 hectares of crops · 2 markets a week'],
       ],
       description: `<p>A <strong>summer job</strong>: two months as a seasonal worker on a market gardening farm in Hermeray, joining the small team through the peak of the harvest season between two academic years.</p>`,
       sections: [
@@ -735,10 +744,10 @@ const projects = {
       ],
       meta: [
         ['Client', 'Dassault Aviation'],
-        ['Period', 'September 2025 – January 2026'],
+        ['Period', 'September 2025 – May 2026'],
         ['Domain', 'Aeronautics'],
         ['Team size', '12 people'],
-        ['Position', 'Co-Head of the project and Head of Artificial Intelligence'],
+        ['Position', 'Head of the Gadz’Air team (12 members); developer of the AI video-processing code'],
         ['Methodology', 'Product Development'],
       ],
       description: `
@@ -848,6 +857,7 @@ const projects = {
         ['Period', 'May 2026'],
         ['Domain', 'Embedded Systems / Computer Vision'],
         ['Team size', 'Solo project'],
+        ['Context', 'Arts et Métiers extra-credit project (sensors course)'],
         ['Position', 'Designer & Developer'],
       ],
       description: `<p>A solo project to design and build a fully autonomous miniature car from scratch using a <strong>Raspberry Pi</strong> as the central processing unit. The goal was to architect an end-to-end embedded system capable of navigating autonomously — combining real-time computer vision, sensor fusion, and motor control within the constraints of a single-board computer.</p>`,
@@ -890,7 +900,7 @@ const projects = {
       image: 'eddy_braking.jpg',
       gallery: ['eddy_braking1.jpg', 'eddy_braking2.jpg', 'eddy_braking3.jpg'],
       meta: [
-        ['Period', 'December 2024 – July 2025'],
+        ['Period', '2023 – 2025 (two-year project)'],
         ['Domain', 'Electronics / Electromagnetism'],
         ['Methodology', 'Research Project'],
       ],
@@ -979,7 +989,8 @@ const projects = {
       title: "Les Restos du Cœur",
       report: null,
       meta: [
-        ['Period', 'From July 2023 (ongoing)'],
+        ['Period', 'Since 2021 (ongoing)'],
+        ['Location', 'Rambouillet, France'],
         ['Domain', 'Food Bank & Social Support'],
         ['Team size', '~10 volunteers per week'],
         ['Position', 'Organiser & Participant'],
@@ -996,7 +1007,7 @@ const projects = {
         {
           title: 'Achievements',
           body: `<ul>
-            <li>Served up to <strong>200 families per week</strong></li>
+            <li>Distribute food to <strong>50 families every week</strong>; took part in the campaign that produced a record local donation of 1.5 tons during the 39th national food drive</li>
             <li>Collected <strong>1.3 tonnes of food</strong> in a town of 50,000 during the 2023 national campaign</li>
           </ul>`
         }
@@ -1010,7 +1021,7 @@ const projects = {
       report: null,
       logo: 'Gazole_logo.webp',
       meta: [
-        ['Period', 'From November 2025 (ongoing)'],
+        ['Period', 'Since June 2026 (ongoing)'],
         ['Domain', 'Charity & Community'],
         ['Team size', '5 (Châlons-en-Champagne)'],
         ['Position', 'Secretary'],
@@ -1042,7 +1053,7 @@ const projects = {
       report: null,
       logo: 'regattarts_logo.webp',
       meta: [
-        ['Period', 'Since February 2026 (ongoing)'],
+        ['Period', 'Since May 2026 (ongoing)'],
         ['Domain', 'Clean Maritime Engineering'],
         ['Team size', '20 people'],
         ['Position', 'Head of Sponsoring'],
@@ -1059,7 +1070,7 @@ const projects = {
         },
         {
           title: 'Achievement',
-          body: `<p>Secured <strong>€30,000 in sponsorship</strong> to finance the development and production of the competition boat.</p>`
+          body: `<p>Responsible for raising the project’s funding (around <strong>€25,000</strong>), signing partnerships with companies and handling communication with partners.</p>`
         }
       ],
       chips: ['Sponsoring', 'Clean Energy', 'Marine Engineering', 'Social Media', 'Communication']
@@ -1071,7 +1082,7 @@ const projects = {
       report: null,
       gallery: ['cordee1.jpg', 'cordee2.jpg', 'cordee3.jpg', 'cordee4.jpg'],
       meta: [
-        ['Period', 'From September 2025 (ongoing)'],
+        ['Period', 'September 2025 – July 2026'],
         ['Domain', 'Education & Mentoring'],
         ['Team size', '20 people'],
         ['Position', 'Organiser & Participant'],
@@ -1141,11 +1152,11 @@ const projects = {
       icon: '',
       title: 'Piano',
       meta: [
-        ['Experience', '6 years of lessons'],
+        ['Experience', '5 years of lessons, self-taught since'],
         ['Genre', 'Classical & Exploring'],
         ['Theory', 'Solfège — French & English notation'],
       ],
-      description: `<p>I studied piano for six years under a private teacher, building a solid foundation in classical repertoire and music theory. Beyond technique, lessons included solfège in both the French (do-ré-mi) and English (C-D-E) notation systems. Over time I've moved beyond purely classical music, enjoying the exploration of other genres whenever the opportunity arises.</p>`,
+      description: `<p>I studied piano for five years under a private teacher, and have kept playing self-taught since, building a solid foundation in classical repertoire and music theory. Beyond technique, lessons included solfège in both the French (do-ré-mi) and English (C-D-E) notation systems. Over time I've moved beyond purely classical music, enjoying the exploration of other genres whenever the opportunity arises.</p>`,
       sections: [
         {
           title: 'What I play',
@@ -1208,7 +1219,7 @@ const projects = {
           title: 'Practice',
           body: `<ul>
             <li>Regular outdoor runs — roads and trails</li>
-            <li>Building endurance over distances of 10 km and beyond</li>
+            <li>Three official 10K races so far; now preparing a half-marathon</li>
             <li>Using running as active recovery and stress management</li>
           </ul>`
         }
@@ -1262,6 +1273,34 @@ const projects = {
       chips: ['Savate', 'Martial Arts', 'Discipline', 'Coordination']
     }
   };
+
+/* Added from CV V3 */
+projects.pilion = {
+  domain: 'Product design',
+  title: 'BerSac, product development with Pilion',
+  meta: [
+    ['Partner', 'Pilion, construction start-up incubated at Arts et Métiers'],
+    ['Period', 'September 2026 – ongoing'],
+    ['Position', 'Head of the student team'],
+    ['Domain', 'Product design / Construction']
+  ],
+  description: `<p>Pilion is a start-up incubated at Arts et Métiers that works in construction. I head the team of students recruited for one of its projects: developing <strong>BerSac</strong>, a new product built around Pilion’s needs.</p>`,
+  sections: [
+    { title: 'What I am responsible for', body: `<ul><li>Developing BerSac from Pilion’s requirements</li><li>Carrying out a benchmark of existing solutions</li><li>Running a sizing study for a functional prototype</li><li>Building the CAD model of the prototype</li><li>Designing and making a working prototype</li></ul>` }
+  ],
+  chips: ['Product development', 'Benchmark', 'Sizing study', 'CAD', 'Prototyping', 'Team leadership']
+};
+projects.unass = {
+  domain: 'Charity',
+  title: 'UNASS, first-aid volunteer',
+  meta: [
+    ['Period', 'Since June 2026 (ongoing)'],
+    ['Location', 'Châlons-en-Champagne, France'],
+    ['Domain', 'First aid / Event safety']
+  ],
+  description: `<p>Part of the team that sets up first-aid stations at large events, for crowds of up to 3,000 people. I have taken part in five major events so far, each with more than 500 attendees.</p>`,
+  chips: ['First aid', 'Event safety', 'Teamwork']
+};
 const infoPages = {
     prepa: {
       title: 'What is a Classe Préparatoire?',
@@ -1304,7 +1343,7 @@ const infoPages = {
       `
     }
   };
-const REFS = {"uav": "PRJ-01", "gearbox": "PRJ-02", "manufacturing": "PRJ-03", "autonomouscar": "PRJ-04", "eddy": "PRJ-05", "prosthesis": "PRJ-06", "chatbot": "PRJ-07"};
+const REFS = {"uav": "PRJ-01", "pilion": "PRJ-02", "gearbox": "PRJ-03", "manufacturing": "PRJ-04", "autonomouscar": "PRJ-05", "eddy": "PRJ-06", "prosthesis": "PRJ-07", "chatbot": "PRJ-08"};
 
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
