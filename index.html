@@ -117,9 +117,10 @@ main { margin-left: var(--side); }
 .hook { margin-top: 18px; font-size: 1.2rem; color: var(--ink-2); max-width: 46ch; }
 .hook strong { color: var(--ink); font-weight: 500; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-.spec { margin-top: 44px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--rule-strong); background: rgba(10,37,70,.6); max-width: 760px; }
+.spec { margin-top: 44px; display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); border: 1px solid var(--rule-strong); background: rgba(10,37,70,.6); max-width: 760px; }
 .spec div { padding: 11px 14px; border-right: 1px solid var(--rule); }
-.spec div:last-child { border-right: 0; }
+.spec div:nth-child(2n) { border-right: 0; }
+.spec div:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
 .spec dt { font: 400 10.5px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
 .spec dd { margin: 4px 0 0; font-size: 14.5px; font-weight: 500; }
 .portrait { position: relative; margin: 0; justify-self: center; width: min(320px, 100%); }
@@ -431,8 +432,8 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
         <dl class="spec">
           <div><dt>Based in</dt><dd>Versailles, France</dd></div>
           <div><dt>School</dt><dd>ENSAM, class of 2028</dd></div>
-          <div><dt>CAD</dt><dd>3DExperience · SolidWorks</dd></div>
-          <div><dt>Code</dt><dd>Python</dd></div>
+          <div><dt>Software</dt><dd>3DExperience · CATIA&nbsp;V5 · SolidWorks · Fusion&nbsp;360 · Abaqus · MATLAB</dd></div>
+          <div><dt>Code</dt><dd>Python · LaTeX · HTML</dd></div>
         </dl>
       </div>
       <figure class="portrait">
@@ -530,7 +531,7 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
       <div class="about-text">
         <p>I'm a <strong>Franco-British mechanical engineering student</strong> at Arts et Métiers (ENSAM), France's leading engineering school for manufacturing and mechanics. My training combines workshop experience with technical project leadership, from an AI-guided drone for Dassault's UAV Challenge to a new product for a start-up incubated at the school.</p>
         <p>In a team, I'm the person who brings structure and keeps the project on track, and who keeps pushing on a hard problem until it is solved. On the Dassault UAV Challenge that meant leading a 12-person team and coordinating its four sub-groups: motors, fuselage, battery and information processing.</p>
-        <p>My daily tools are <strong>3D modelling</strong> (3DExperience and SolidWorks), <strong>project management</strong> and <strong>Python</strong> for data analysis and process automation. They let me work on the engineering itself and explain it to the business side.</p>
+        <p>My daily tools are <strong>CAD and simulation software</strong> (3DExperience, CATIA&nbsp;V5, SolidWorks, Fusion&nbsp;360, Abaqus and MATLAB), <strong>project management</strong>, and <strong>code</strong>: Python for data analysis and process automation, LaTeX and HTML for documents and the web. They let me work on the engineering itself and explain it to the business side.</p>
         <div class="figures">
           <div><b>3.70</b><span>GPA at ENSAM</span></div>
           <div><b>110</b><span>TOEFL iBT / 120</span></div>
