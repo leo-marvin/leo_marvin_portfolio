@@ -178,6 +178,7 @@ main { margin-left: var(--side); }
 .figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--rule-strong); margin-top: 10px; }
 .figures div { padding: 12px 14px; border-right: 1px solid var(--rule); }
 .figures div:last-child { border-right: 0; }
+.figures span + span { display: block; margin-top: 4px; color: var(--ink-2); }
 .figures b { display: block; font: 700 1.6rem/1.1 var(--display); color: var(--ink); }
 .figures span { font: 400 11px/1.3 var(--mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; }
 .notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--rule-strong); counter-reset: note; }
@@ -534,7 +535,7 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
         <p>In a team, I'm the person who brings structure and keeps the project on track, and who keeps pushing on a hard problem until it is solved. On the Dassault UAV Challenge that meant leading a 12-person team and coordinating its four sub-groups: motors, fuselage, battery and information processing.</p>
         <p>My daily tools are <strong>CAD and simulation software</strong> (3DExperience, CATIA&nbsp;V5, SolidWorks, Fusion&nbsp;360, Abaqus and MATLAB), <strong>project management</strong>, and <strong>code</strong>: Python for data analysis and process automation, LaTeX and HTML for documents and the web. They let me work on the engineering itself and explain it to the business side.</p>
         <div class="figures">
-          <div><b>3.70</b><span>GPA at ENSAM</span></div>
+          <div><b>3.70</b><span>GPA at ENSAM</span><span>Ranked 208 / 1287</span></div>
           <div><b>110</b><span>TOEFL iBT / 120</span></div>
           <div><b>Top 10%</b><span>Prépa ranking</span></div>
           <div><b>2028</b><span>Graduating</span></div>
@@ -626,7 +627,7 @@ dialog.sheet::backdrop { background: rgba(4, 16, 32, .72); }
       <article class="tl2-item edu" style="grid-row:2" role="listitem">
         <p class="t-date">Sep 2025 – 2028</p>
         <h4>École Nationale Supérieure d'Arts et Métiers (ENSAM)</h4>
-        <p class="t-where">Châlons-en-Champagne and Paris · three-year combined Bachelor and Master of Science · GPA 3.70</p>
+        <p class="t-where">Châlons-en-Champagne and Paris · three-year combined Bachelor and Master of Science · GPA 3.70 · Ranked 208 / 1287</p>
         <ul><li>Continuum mechanics, materials, thermodynamics and fluid mechanics, signal processing</li><li>Projects: Dassault UAV Challenge, BerSac with Pilion, gearbox design, industrial manufacturing, shoulder prosthesis study</li></ul>
         <div class="t-links"><button data-open="uav">UAV Challenge</button><button data-open="pilion">BerSac</button><button data-open="gearbox">Gearbox</button><button data-open="manufacturing">Manufacturing</button><button data-open="prosthesis">Prosthesis study</button></div>
       </article>
